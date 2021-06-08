@@ -6,6 +6,7 @@
 
 import { Component } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
+import './lit-components/hello-world/hello-world.element';
 
 @Component({
   selector: 'app-root',
