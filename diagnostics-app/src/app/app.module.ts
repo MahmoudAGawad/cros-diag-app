@@ -18,9 +18,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { SidenavItemComponent } from './sidenav/sidenav-list/sidenav-item/sidenav-item.component';
+import { SidenavListComponent } from './sidenav/sidenav-list/sidenav-list.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidenavComponent],
+  declarations: [AppComponent, HeaderComponent, SidenavComponent, SidenavItemComponent, SidenavListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

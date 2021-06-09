@@ -4,11 +4,9 @@
  * found in the LICENSE file.
  */
 
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-.app-sidenav {
-  padding-top: 1rem;
+h2 {
+  margin-top: .5rem;
+  padding-left: 2rem;
+  margin-bottom: .5rem;
+  color: #aaa;
 }

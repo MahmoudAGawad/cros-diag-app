@@ -1,0 +1,25 @@
+/**
+ * Copyright 2021 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file.
+ */
+
+li {
+  list-style: none;
+  display: flex;
+  padding: .5rem 2rem;
+  align-items: center;
+}
+
+li span {
+  height: fit-content;
+}
+
+li span.icon {
+  margin-right: 1rem;
+  margin-top: 4px;
+}
+
+li span.text {
+  font-size: 1.2rem;
+}
