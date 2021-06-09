@@ -14,24 +14,14 @@
   </button>
   <span>Diagnostics</span>
   <span class="example-spacer"></span>
-  <button
-    mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
-  >
-    <mat-icon>favorite</mat-icon>
-  </button>
   <div>
-    <mat-slide-toggle
-      [(ngModel)]="darkThemeEnabled"
-      (change)="onChangeTheme($event)"
+    <button
+      mat-icon-button
+      (click)="onToggleTheme()"
+      aria-label="Toggle Light/Dark Mode"
     >
-      <span *ngIf="darkThemeEnabled">
-        <mat-icon>dark_mode</mat-icon>
-      </span>
-      <span *ngIf="!darkThemeEnabled">
-        <mat-icon>light_mode</mat-icon>
-      </span>
-    </mat-slide-toggle>
+      <mat-icon *ngIf="!darkThemeEnabled">light_mode</mat-icon>
+      <mat-icon *ngIf="darkThemeEnabled">dark_mode</mat-icon>
+    </button>
   </div>
 </mat-toolbar>

@@ -31,9 +31,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.renderer.addClass(this.document.body, this.theme);
   }
-  toggleTheme() {
+  onSetTheme(darkModeEnabled: boolean) {
     this.renderer.removeClass(this.document.body, this.theme);
-    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    this.theme = darkModeEnabled ? 'dark' : 'light';
     this.renderer.addClass(this.document.body, this.theme);
   }
 }

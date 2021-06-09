@@ -5,7 +5,6 @@
  */
 
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-header',
@@ -20,8 +19,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onChangeTheme(e: MatSlideToggleChange) {
-    this.darkThemeEnabled = e.checked;
+  onToggleTheme() {
+    this.darkThemeEnabled = !this.darkThemeEnabled;
     this.themeChange.emit(this.darkThemeEnabled);
   }
 }
