@@ -14,13 +14,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Output() themeChange = new EventEmitter<boolean>();
 
-  darkThemeEnabled = false;
+  darkThemeEnabled = true;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.themeChange.emit(this.darkThemeEnabled);
+  }
 
   onToggleTheme() {
-    this.darkThemeEnabled = !this.darkThemeEnabled;
-    this.themeChange.emit(this.darkThemeEnabled);
+    // TODO Enable toggle after deciding light theme
+    // this.darkThemeEnabled = !this.darkThemeEnabled;
+    // this.themeChange.emit(this.darkThemeEnabled);
   }
 }

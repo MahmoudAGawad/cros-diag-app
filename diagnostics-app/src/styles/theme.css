@@ -1,7 +1,15 @@
 .light {
-  --color-primary: #009688;
+  --color-header-bg: #fff;
+  --color-sidenav-bg: #fff;
+  --color-content-bg: #fff;
 }
 
 .dark {
-  --color-primary: #ffeb3b;
+  --color-header-bg: #292929;
+  --color-sidenav-bg: #292929;
+  --color-content-bg: #1c1c1c;
+}
+
+html {
+  --sidenav-width: 17.5%;
 }

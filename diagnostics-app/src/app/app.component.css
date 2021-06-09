@@ -7,3 +7,38 @@
 h1 {
   color: var(--color-primary);
 }
+
+app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.app-layout {
+  margin-top: 64px;
+  display: flex;
+  align-items: stretch;
+  min-height: calc(100vh - 64px);
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-sidenav {
+  background-color: var(--color-sidenav-bg);
+  flex: 0 0 17.5%;
+  height: calc(100vh - 64px);
+  position: fixed;
+  left: 0;
+  width: 17.5%;
+  padding: 1rem;
+}
+
+.app-content {
+  background-color: var(--color-content-bg);
+  flex: 1;
+  width: calc(100 - var(--sidenav-width));
+  margin-left: var(--sidenav-width);
+  padding: 1rem;
+}

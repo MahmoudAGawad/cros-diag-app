@@ -16,6 +16,9 @@ import '../webcomponents/hello-world/hello-world.element';
 })
 export class AppComponent implements OnInit {
   private theme: string = 'light';
+  // dummy data
+  numbers: number[];
+
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
@@ -27,6 +30,9 @@ export class AppComponent implements OnInit {
         console.log('Updated app to latest version!');
       });
     });
+    
+    // dummy data
+    this.numbers = Array(100).fill(42);
   }
   ngOnInit() {
     this.renderer.addClass(this.document.body, this.theme);
