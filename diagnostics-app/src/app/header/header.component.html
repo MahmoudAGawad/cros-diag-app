@@ -1,0 +1,37 @@
+<!--
+ Copyright 2021 The Chromium Authors. All rights reserved.
+ Use of this source code is governed by a BSD-style license that can be
+ found in the LICENSE file.
+-->
+
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Diagnostics</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <div>
+    <mat-slide-toggle
+      [(ngModel)]="darkThemeEnabled"
+      (change)="onChangeTheme($event)"
+    >
+      <span *ngIf="darkThemeEnabled">
+        <mat-icon>dark_mode</mat-icon>
+      </span>
+      <span *ngIf="!darkThemeEnabled">
+        <mat-icon>light_mode</mat-icon>
+      </span>
+    </mat-slide-toggle>
+  </div>
+</mat-toolbar>
