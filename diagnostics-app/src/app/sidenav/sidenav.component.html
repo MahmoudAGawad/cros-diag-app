@@ -1,0 +1,20 @@
+<div class="app-sidenav">
+  <h2>Dashboard</h2>
+  <h2>Metrics</h2>
+  <ul>
+    <li
+      *ngFor="
+        let num of ['CPU', 'RAM', 'Bluetooth', 'Battery', 'Cooling', 'Storage']
+      "
+    >
+      {{ num }}
+    </li>
+  </ul>
+  <h2>Diagnostics</h2>
+  <ul>
+    <li *ngFor="let num of ['CPU', 'Disk', 'Battery', 'Power', 'NVMe']">
+      {{ num }}
+    </li>
+  </ul>
+  <h2>Settings</h2>
+</div>

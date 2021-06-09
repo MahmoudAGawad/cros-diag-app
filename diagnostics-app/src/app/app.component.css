@@ -25,7 +25,7 @@ app-header {
   overflow: hidden;
 }
 
-.app-sidenav {
+.app-sidenav-container {
   background-color: var(--color-sidenav-bg);
   flex: 0 0 17.5%;
   height: calc(100vh - 64px);
