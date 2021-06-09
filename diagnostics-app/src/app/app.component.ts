@@ -7,7 +7,8 @@
  * Imported by app.module.ts
  */
 
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 
 @Component({
@@ -15,13 +16,26 @@ import { SwUpdate } from '@angular/service-worker';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  constructor(private updates: SwUpdate) {
-    updates.available.subscribe((event) => {
+export class AppComponent implements OnInit {
+  private theme: string = 'light';
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2,
+    private updates: SwUpdate
+  ) {
+    this.updates.available.subscribe((event) => {
       updates.activateUpdate().then(() => {
         document.location.reload();
         console.log('Updated app to latest version!');
       });
     });
+  }
+  ngOnInit() {
+    this.renderer.addClass(this.document.body, this.theme);
+  }
+  toggleTheme() {
+    this.renderer.removeClass(this.document.body, this.theme);
+    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    this.renderer.addClass(this.document.body, this.theme);
   }
 }
