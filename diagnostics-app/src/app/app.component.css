@@ -4,3 +4,6 @@
  * found in the LICENSE file.
  */
 
+h1 {
+  color: var(--color-primary);
+}
