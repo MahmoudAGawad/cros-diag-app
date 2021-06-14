@@ -1,7 +1,10 @@
+// Copyright 2021 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 /**
- * Copyright 2021 The Chromium Authors. All rights reserved.
- * Use of this source code is governed by a BSD-style license that can be
- * found in the LICENSE file.
+ * @fileoverview Main app module file of the application.
+ * Imports all the submodules and global dependencies of the project.
  */
 
 import { NgModule } from '@angular/core';
