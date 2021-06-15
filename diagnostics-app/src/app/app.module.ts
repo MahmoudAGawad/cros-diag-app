@@ -19,11 +19,15 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
-import { LayoutModule } from '@angular/cdk/layout';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ContentLayoutComponent, SideNavComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    ContentLayoutComponent,
+    SideNavComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,7 +39,6 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
     }),
     BrowserAnimationsModule,
     SharedModule,
-    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
