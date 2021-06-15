@@ -11,4 +11,7 @@
 .app-header {
   background-color: var(--app-header-background);
   border-bottom: 1px solid var(--app-header-border-bottom-color);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
