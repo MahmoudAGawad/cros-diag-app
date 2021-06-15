@@ -4,3 +4,6 @@
  * found in the LICENSE file.
  */
 
+.mat-list-item {
+  color: var(--app-sidenav-color);
+}

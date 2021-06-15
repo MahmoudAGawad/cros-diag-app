@@ -8,12 +8,3 @@
   background: inherit;
 }
 
-.mat-list-base .mat-list-item {
-  color: var(--app-sidenav-color);
-  display: flex;
-  align-items: center;
-}
-
-.mat-list-base .mat-list-item .text {
-  margin-left: 10px;
-}
