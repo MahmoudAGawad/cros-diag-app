@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Defines the <app-header> component.
- * Imported by shared.module.ts
+ * @fileoverview Defines the Header component.
+ * Imported by app.module.ts
  */
 
 import { Component, OnInit } from '@angular/core';
