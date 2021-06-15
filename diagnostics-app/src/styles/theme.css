@@ -19,4 +19,7 @@
 
   --app-sidenav-background: var(--color-light-grey);
   --app-sidenav-color: var(--color-white);
+
+  --app-content-background: var(--color-dark-grey);
+  --app-content-color: var(--color-white);
 }

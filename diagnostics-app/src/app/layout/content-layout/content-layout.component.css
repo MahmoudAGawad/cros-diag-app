@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 300px;
 }
 
 mat-sidenav.mat-drawer {
@@ -28,4 +28,13 @@ mat-sidenav.mat-drawer-side {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.mat-drawer-content {
+  background-color: var(--app-content-background);
+  color: var(--app-content-color);
+}
+
+.app-content-container {
+  padding: 20px;
 }
