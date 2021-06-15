@@ -8,3 +8,7 @@
   background: inherit;
 }
 
+.mat-subheader {
+  color: var(--app-sidenav-subheader-color);
+  font-size: 16px;
+}

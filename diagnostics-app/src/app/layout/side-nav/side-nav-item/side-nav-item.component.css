@@ -7,3 +7,11 @@
 .mat-list-item {
   color: var(--app-sidenav-color);
 }
+
+.mat-list-item h3 {
+  font-size: 18px;
+}
+
+.mat-list-item .mat-icon {
+  color: var(--app-sidenav-icon-color);
+}
