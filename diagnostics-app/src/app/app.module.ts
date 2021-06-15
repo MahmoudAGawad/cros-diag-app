@@ -18,9 +18,11 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, ContentLayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,6 +34,7 @@ import { HeaderComponent } from './layout/header/header.component';
     }),
     BrowserAnimationsModule,
     SharedModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
