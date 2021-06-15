@@ -6,8 +6,22 @@
   width: 200px;
 }
 
+mat-sidenav.mat-drawer {
+  background-color: var(--app-sidenav-background);
+  color: var(--app-sidenav-color);
+}
+
+mat-sidenav.mat-drawer-side {
+  border-right: none;
+}
+
 .sidenav .mat-toolbar {
-  background: inherit;
+  background-color: var(--app-sidenav-background);
+  color: var(--app-sidenav-color);
+}
+
+.sidenav .mat-list-base .mat-list-item {
+  color: var(--app-sidenav-color);
 }
 
 .mat-toolbar.mat-primary {
