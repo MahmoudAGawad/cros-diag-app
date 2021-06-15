@@ -17,7 +17,7 @@ import { SwUpdate } from '@angular/service-worker';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  private theme: string = 'light';
+  private theme: string = 'dark';
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
