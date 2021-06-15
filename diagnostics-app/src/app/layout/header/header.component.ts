@@ -7,7 +7,7 @@
  * Imported by app.module.ts
  */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +15,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+
+  @Output() toggleDrawer = new EventEmitter<void>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  /**
+   * Triggered when user clicks the menu button
+   * Sends an empty event to parent component
+   * informing about drawer toggle event
+   */
+  onToggleDrawer() {
+    this.toggleDrawer.emit();
+  }
 }
