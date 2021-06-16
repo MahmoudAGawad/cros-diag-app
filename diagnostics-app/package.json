@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "Supports JIT compilation and execution of Angular apps on different supported browsers",
     "@angular/router": "Implements the Angular Router service , which enables navigation from one view to the next as users perform application tasks",
     "@angular/service-worker": "Enables Angular service worker support required for progressive web applications",
+    "@webcomponents/webcomponentsjs": "Contains all of the web components polyfills and is suitable for use on any supported browser",
+    "lit": "Lit is a simple library for building fast, lightweight web components",
     "rxjs": "RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code",
     "tslib": "tslib is a runtime library for TypeScript that contains all of the TypeScript helper functions",
     "zone.js": "zone.js is essential to Angular for handling change detections. It allows Angular to know when the UI needs to be refreshed"
