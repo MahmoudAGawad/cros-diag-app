@@ -4,7 +4,7 @@
  found in the LICENSE file.
 -->
 
-<a mat-list-item class="app-side-nav-item" href="#">
-  <mat-icon mat-list-icon>home</mat-icon>
-  <h3 matLine>Dashboard</h3>
+<a mat-list-item class="app-side-nav-item" [routerLink]="link">
+  <mat-icon mat-list-icon>{{ icon }}</mat-icon>
+  <h3 matLine>{{ name }}</h3>
 </a>

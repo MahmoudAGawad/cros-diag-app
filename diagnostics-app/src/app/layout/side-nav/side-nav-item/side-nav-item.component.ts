@@ -8,7 +8,7 @@
  * Imported by app.module.ts
  */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav-item',
@@ -16,6 +16,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-nav-item.component.css'],
 })
 export class SideNavItemComponent implements OnInit {
+  @Input() icon: string = 'widgets';
+  @Input() link: string = '/';
+  @Input() name: string = 'Unknown';
   constructor() {}
 
   ngOnInit(): void {}
