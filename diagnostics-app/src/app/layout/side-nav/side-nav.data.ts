@@ -21,7 +21,7 @@ export interface NavigationList {
 
 export const DASHBOARD_NAV_DATA: NavigationList = {
   hasHeader: false,
-  items: [{ icon: 'home', link: '/dashboard', name: 'Dashboard' }],
+  items: [{ icon: 'laptop_chromebook', link: '/dashboard', name: 'Dashboard' }],
 };
 
 export const METRICS_NAV_DATA: NavigationList = {
@@ -29,7 +29,7 @@ export const METRICS_NAV_DATA: NavigationList = {
   hasHeader: true,
   items: [
     { icon: 'memory', link: '/', name: 'CPU' },
-    { icon: 'laptop_chromebook', link: '/', name: 'RAM' },
+    { icon: 'developer_board', link: '/', name: 'RAM' },
     { icon: 'bluetooth', link: '/', name: 'Bluetooth' },
     { icon: 'battery_full', link: '/', name: 'Battery' },
     { icon: 'ac_unit', link: '/', name: 'Cooling' },
