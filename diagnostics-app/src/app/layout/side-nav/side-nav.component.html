@@ -4,23 +4,14 @@
  found in the LICENSE file.
 -->
 
-<mat-nav-list>
-  <app-side-nav-item></app-side-nav-item>
-</mat-nav-list>
-<div mat-subheader>Metrics</div>
-<mat-nav-list>
-  <app-side-nav-item></app-side-nav-item>
-  <app-side-nav-item></app-side-nav-item>
-  <app-side-nav-item></app-side-nav-item>
-  <app-side-nav-item></app-side-nav-item>
-  <app-side-nav-item></app-side-nav-item>
-  <app-side-nav-item></app-side-nav-item>
-</mat-nav-list>
-<div mat-subheader>Diagnostics</div>
-<mat-nav-list>
-  <app-side-nav-item></app-side-nav-item>
-  <app-side-nav-item></app-side-nav-item>
-  <app-side-nav-item></app-side-nav-item>
-  <app-side-nav-item></app-side-nav-item>
-  <app-side-nav-item></app-side-nav-item>
-</mat-nav-list>
+<div *ngFor="let navList of navLists">
+  <div *ngIf="navList.hasHeader" mat-subheader>{{ navList.header }}</div>
+  <mat-nav-list>
+    <app-side-nav-item
+      *ngFor="let navItem of navList.items"
+      [icon]="navItem.icon"
+      [link]="navItem.link"
+      [name]="navItem.name"
+    ></app-side-nav-item>
+  </mat-nav-list>
+</div>

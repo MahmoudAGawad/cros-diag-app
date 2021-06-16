@@ -9,12 +9,25 @@
 
 import { Component, OnInit } from '@angular/core';
 
+import {
+  NavigationList,
+  DASHBOARD_NAV_DATA,
+  METRICS_NAV_DATA,
+  DIAGNOSTICS_NAV_DATA,
+} from './side-nav.data';
+
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.css'],
 })
 export class SideNavComponent implements OnInit {
+  navLists: NavigationList[] = [
+    DASHBOARD_NAV_DATA,
+    METRICS_NAV_DATA,
+    DIAGNOSTICS_NAV_DATA,
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
