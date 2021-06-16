@@ -19,6 +19,8 @@
   --color-darker-white: #989898;
   --color-dark-white: #e3e3e3;
 
+  --color-blue: rgb(76, 139, 245);
+
   --app-header-background: var(--color-light-grey);
   --app-header-border-bottom-color: var(--color-dark-grey);
 
@@ -26,6 +28,7 @@
   --app-sidenav-color: var(--color-dark-white);
   --app-sidenav-subheader-color: var(--color-lighter-grey);
   --app-sidenav-icon-color: var(--color-darker-white);
+  --app-sidenav-item-active-icon-color: var(--color-blue);
 
   --app-content-background: var(--color-dark);
   --app-content-color: var(--color-white);
