@@ -14,37 +14,36 @@ export interface NavigationItem {
 }
 
 export interface NavigationList {
-  name: string;
+  header?: string;
   items: NavigationItem[];
   hasHeader: boolean;
 }
 
 export const DASHBOARD_NAV_DATA: NavigationList = {
-  name: 'Dashboard',
   hasHeader: false,
   items: [{ icon: 'home', link: '/', name: 'Dashboard' }],
 };
 
 export const METRICS_NAV_DATA: NavigationList = {
-  name: 'Metrics',
+  header: 'Metrics',
   hasHeader: true,
   items: [
     { icon: 'memory', link: '/', name: 'CPU' },
     { icon: 'laptop_chromebook', link: '/', name: 'RAM' },
     { icon: 'bluetooth', link: '/', name: 'Bluetooth' },
-    { icon: 'battery', link: '/', name: 'Battery' },
+    { icon: 'battery_full', link: '/', name: 'Battery' },
     { icon: 'ac_unit', link: '/', name: 'Cooling' },
     { icon: 'storage', link: '/', name: 'Storage' },
   ],
 };
 
 export const DIAGNOSTICS_NAV_DATA: NavigationList = {
-  name: 'Diagnostics',
+  header: 'Diagnostics',
   hasHeader: true,
   items: [
     { icon: 'memory', link: '/', name: 'CPU' },
     { icon: 'storage', link: '/', name: 'Disk' },
-    { icon: 'battery', link: '/', name: 'Battery' },
+    { icon: 'battery_full', link: '/', name: 'Battery' },
     { icon: 'power', link: '/', name: 'Power' },
     { icon: 'storage', link: '/', name: 'NVMe' },
   ],
