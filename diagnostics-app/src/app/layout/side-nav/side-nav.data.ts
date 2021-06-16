@@ -21,7 +21,7 @@ export interface NavigationList {
 
 export const DASHBOARD_NAV_DATA: NavigationList = {
   hasHeader: false,
-  items: [{ icon: 'home', link: '/', name: 'Dashboard' }],
+  items: [{ icon: 'home', link: '/dashboard', name: 'Dashboard' }],
 };
 
 export const METRICS_NAV_DATA: NavigationList = {
