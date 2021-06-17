@@ -3,5 +3,35 @@
  Use of this source code is governed by a BSD-style license that can be
  found in the LICENSE file.
 -->
-
-<h1>Dashboard</h1>
+<div class="row header">
+  <h1 class="laptop-name">Lenovo Thinkpad T480</h1>
+  <h3 class="os-version">ChromeOS 89</h3>
+</div>
+<div class="row" fxLayout="row">
+  <ul class="app-spec-list" fxFlex>
+    <li><p>Model</p></li>
+    <li><p>Serial Number</p></li>
+    <li><p>Updated on</p></li>
+  </ul>
+  <ul class="app-spec-list" fxFlex>
+    <li><p>Processor</p></li>
+    <li><p>Memory</p></li>
+    <li><p>Storage Capacity</p></li>
+  </ul>
+</div>
+<div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px">
+  <div class="col-container" fxFlex fxLayout="column" fxLayoutGap="16px">
+    <div class="card-container">Battery</div>
+    <div class="card-container">RAM</div>
+  </div>
+  <div class="col-container" fxFlex fxLayout="column" fxLayoutGap="16px">
+    <div class="card-container">CPU</div>
+    <div class="card-container">Disk</div>
+    <div class="card-container">Timezone</div>
+  </div>
+  <div class="col-container" fxFlex fxLayout="column" fxLayoutGap="16px">
+    <div class="card-container">Cooling</div>
+    <div class="card-container">Backlight</div>
+    <div class="card-container">Bluetooth</div>
+  </div>
+</div>
