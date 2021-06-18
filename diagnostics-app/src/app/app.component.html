@@ -5,4 +5,6 @@
 -->
 
 <h1>ChromeOS Diagnostics App</h1>
-<button (click)="toggleTheme()">Enable Dark Mode</button>
+<button (click)="toggleTheme()">
+  {{ theme === "light" ? "Enable Light Mode" : "Enable Dark Mode" }}
+</button>
