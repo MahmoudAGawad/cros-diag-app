@@ -38,20 +38,28 @@ describe('component: app', () => {
   });
 
   it('should toggle the theme', () => {
+    // theme = 'dark' by default
     component.toggleTheme();
     fixture.detectChanges();
-    expect(component.theme).toBe('light');
     // css class 'light' should be added
+    expect(component.theme).toBe('light');
     expect(component.cssClass).toBe('light');
+    // switch again
+    component.toggleTheme();
+    fixture.detectChanges();
+    // css class 'light' should be added
+    expect(component.theme).toBe('dark');
+    expect(component.cssClass).toBe('dark');
   });
 
   it('should toggle theme on button click', () => {
-    const buttonRef: HTMLButtonElement = fixture.nativeElement.querySelector('.theme-toggle');
+    // simulate component.toggleTheme()
+    spyOn(component, 'toggleTheme');    
+    const buttonRef: HTMLButtonElement =
+      fixture.nativeElement.querySelector('.theme-toggle');
     // simulate toggle theme button click
     buttonRef.click();
     fixture.detectChanges();
-    expect(component.theme).toBe('light');
-    // css class 'light' should be added
-    expect(component.cssClass).toBe('light');
+    expect(component.toggleTheme).toHaveBeenCalled();
   });
 });
