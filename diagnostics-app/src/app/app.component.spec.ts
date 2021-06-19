@@ -60,6 +60,7 @@ describe('component: app', () => {
     // simulate toggle theme button click
     buttonRef.click();
     fixture.detectChanges();
+    // should invoke the toggleTheme() function
     expect(component.toggleTheme).toHaveBeenCalled();
   });
 });
