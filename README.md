@@ -10,3 +10,21 @@ header:
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 ```
+# Instructions to set up project
+
+### Prerequisite Configuration
+
+- In the repository root, run   
+1. ```git config --unset-all core.hooksPath```
+2. ```git config --add core.hooksPath .githooks```
+
+    This will set up `.githooks` as the default directory for git hooks in this repository.
+
+- Incase git hooks don't work as intended, run this command to set necessary permissions:  
+ `cd .githooks && chmod +x *`  
+
+### Diagnostics App PWA
+
+1. ```cd diagnostics-app```
+2. ```npm install```
+3. ```ng serve```
