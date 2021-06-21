@@ -20,7 +20,7 @@ header:
 
     This will set up `.githooks` as the default directory for git hooks in this repository.
 
-- Incase git hooks don't work as intended, run this command to set necessary permissions:  
+- In case git hooks don't work as intended, run this command to set necessary permissions:  
  `cd .githooks && chmod +x *`  
 
 ### Diagnostics App PWA
