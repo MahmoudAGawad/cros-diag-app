@@ -16,12 +16,5 @@ import { SwUpdate } from '@angular/service-worker';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private updates: SwUpdate) {
-    updates.available.subscribe((event) => {
-      updates.activateUpdate().then(() => {
-        document.location.reload();
-        console.log('Updated app to latest version!');
-      });
-    });
-  }
+  constructor() {}
 }
