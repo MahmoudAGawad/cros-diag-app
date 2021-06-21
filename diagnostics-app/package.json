@@ -9,9 +9,8 @@
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "husky:prepare": "cd .. && husky install diagnostics-app/.husky",
-    "husky:precommit": "husky add .husky/pre-commit \"cd diagnostics-app\nnpm run test:ci\"",
     "husky:prepush": "husky add .husky/pre-push \"cd diagnostics-app\nnpm run test:ci\"",
-    "postinstall": "npm run husky:prepare && npm run husky:precommit && npm run husky:prepush"
+    "postinstall": "npm run husky:prepare && npm run husky:prepush"
   },
   "private": true,
   "//dependencies": {
