@@ -1,4 +1,5 @@
 #!/bin/sh
 
 cd diagnostics-app
-npm run test:ci
+npm run script:ci
+cd ..
