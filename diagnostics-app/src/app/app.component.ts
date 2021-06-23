@@ -8,7 +8,6 @@
  */
 
 import { Component } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +15,5 @@ import { SwUpdate } from '@angular/service-worker';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private updates: SwUpdate) {
-    updates.available.subscribe((event) => {
-      updates.activateUpdate().then(() => {
-        document.location.reload();
-        console.log('Updated app to latest version!');
-      });
-    });
-  }
+  constructor() {}
 }

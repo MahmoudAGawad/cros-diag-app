@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd diagnostics-app
+npm run script:ci
+pwa_status=$?
+cd ..
+
+exit $pwa_status
