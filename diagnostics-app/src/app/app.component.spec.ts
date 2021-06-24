@@ -37,24 +37,9 @@ describe('component: app', () => {
     expect(component.theme).toBe('dark');
   });
 
-  it('should toggle the theme', () => {
-    // theme = 'dark' by default
-    component.toggleTheme();
-    fixture.detectChanges();
-    // css class 'light' should be added
-    expect(component.theme).toBe('light');
-    expect(component.cssClass).toBe('light');
-    // switch again
-    component.toggleTheme();
-    fixture.detectChanges();
-    // css class 'light' should be added
-    expect(component.theme).toBe('dark');
-    expect(component.cssClass).toBe('dark');
-  });
-
   it('should toggle theme on button click', () => {
-    // simulate component.toggleTheme()
-    spyOn(component, 'toggleTheme');    
+    // allows to check if toggleTheme was called
+    spyOn(component, 'toggleTheme').and.callThrough();
     const buttonRef: HTMLButtonElement =
       fixture.nativeElement.querySelector('.theme-toggle');
     // simulate toggle theme button click
@@ -62,5 +47,11 @@ describe('component: app', () => {
     fixture.detectChanges();
     // should invoke the toggleTheme() function
     expect(component.toggleTheme).toHaveBeenCalled();
+    expect(component.cssClass).toBe('light');
+    // toggle again
+    buttonRef.click();
+    fixture.detectChanges();
+    expect(component.toggleTheme).toHaveBeenCalled();
+    expect(component.cssClass).toBe('dark');
   });
 });
