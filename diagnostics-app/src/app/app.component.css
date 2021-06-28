@@ -4,6 +4,12 @@
  * found in the LICENSE file.
  */
 
+.app-container {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--app-background);
+}
+
 h1 {
-  color: var(--color-primary);
+  color: var(--app-heading);
 }

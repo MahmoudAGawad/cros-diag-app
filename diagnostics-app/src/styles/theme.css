@@ -5,9 +5,17 @@
  */
 
 .light {
-  --color-primary: #009688;
+  --color-dark: #121212;
+  --color-white: #fff;
+
+  --app-background: var(--color-white);
+  --app-heading: var(--color-dark);
 }
 
 .dark {
-  --color-primary: #ffeb3b;
+  --color-dark: #121212;
+  --color-white: #fff;
+
+  --app-background: var(--color-dark);
+  --app-heading: var(--color-white);
 }
