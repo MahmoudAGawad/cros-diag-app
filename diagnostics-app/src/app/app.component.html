@@ -3,5 +3,9 @@
  Use of this source code is governed by a BSD-style license that can be
  found in the LICENSE file.
 -->
-
-<h1>ChromeOS Diagnostics App</h1>
+<div class="app-container">
+  <h1>ChromeOS Diagnostics App</h1>
+  <button class="theme-toggle" (click)="toggleTheme()">
+    {{ theme === "dark" ? "Enable Light Mode" : "Enable Dark Mode" }}
+  </button>
+</div>

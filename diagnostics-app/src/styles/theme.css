@@ -1,0 +1,21 @@
+/*
+ * Copyright 2021 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file.
+ */
+
+.light {
+  --color-dark: #121212;
+  --color-white: #fff;
+
+  --app-background: var(--color-white);
+  --app-heading: var(--color-dark);
+}
+
+.dark {
+  --color-dark: #121212;
+  --color-white: #fff;
+
+  --app-background: var(--color-dark);
+  --app-heading: var(--color-white);
+}

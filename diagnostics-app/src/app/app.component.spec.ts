@@ -6,11 +6,14 @@
  * @fileoverview Test file for the app.component.ts
  */
 
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
+describe('component: app', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
@@ -18,9 +21,37 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create app component', () => {
+    // component is created
+    expect(component).toBeTruthy();
+  });
+
+  it('should set dark mode by default', () => {
+    // default theme is dark
+    expect(component.theme).toBe('dark');
+  });
+
+  it('should toggle theme on button click', () => {
+    // allows to check if toggleTheme was called
+    spyOn(component, 'toggleTheme').and.callThrough();
+    const buttonRef: HTMLButtonElement =
+      fixture.nativeElement.querySelector('.theme-toggle');
+    // simulate toggle theme button click
+    buttonRef.click();
+    fixture.detectChanges();
+    // should invoke the toggleTheme() function
+    expect(component.toggleTheme).toHaveBeenCalled();
+    expect(component.cssClass).toBe('light');
+    // toggle again
+    buttonRef.click();
+    fixture.detectChanges();
+    expect(component.toggleTheme).toHaveBeenCalled();
+    expect(component.cssClass).toBe('dark');
   });
 });
