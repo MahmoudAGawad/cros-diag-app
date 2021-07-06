@@ -2,8 +2,12 @@ name: Angular Test CI
 on:
   push:
     branches: [ main ]
+    paths:
+      - "diagnostics-app/**"
   pull_request:
     branches: [ main ]
+    paths:
+      - "diagnostics-app/**"
 jobs:
   build:
     runs-on: ubuntu-latest
