@@ -19,7 +19,6 @@
   --app-header-color: var(--color-light-grey);
 
   --app-sidenav-background: var(--color-white);
-  --app-sidenav-color: var(--color-dark-grey);
   --app-sidenav-border-right-color: var(--color-lighter-grey);
   --app-sidenav-icon-color: var(--color-darker-white);
   --app-sidenav-item-active-icon-color: var(--color-blue);
@@ -27,6 +26,9 @@
 
   --app-content-background: var(--color-white);
   --app-content-color: var(--color-dark-grey);
+
+  --app-dashboard-card-background: var(--color-lighter-grey);
+  --app-dashboard-card-color: var(--color-light-grey);
 }
 
 .dark {
@@ -40,6 +42,10 @@
   --color-dark-white: #e3e3e3;
   --color-blue: #4c8bf5;
 
+  --color-white: #fff;
+
+  --color-blue: rgb(76, 139, 245);
+
   --app-header-background: var(--color-light-grey);
   --app-header-border-bottom-color: var(--color-dark-grey);
   --app-header-color: var(--color-white);
@@ -48,9 +54,13 @@
   --app-sidenav-color: var(--color-dark-white);
   --app-sidenav-subheader-color: var(--color-lighter-grey);
   --app-sidenav-icon-color: var(--color-darker-white);
+  --app-sidenav-item-active-color: var(--color-white);
   --app-sidenav-item-active-icon-color: var(--color-blue);
   --app-sidenav-item-active-color: var(--color-white);
 
   --app-content-background: var(--color-dark);
   --app-content-color: var(--color-white);
+
+  --app-dashboard-card-background: #222;
+  --app-dashboard-card-color: #777;
 }
