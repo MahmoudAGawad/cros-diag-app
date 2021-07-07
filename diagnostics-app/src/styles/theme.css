@@ -5,17 +5,26 @@
  */
 
 .light {
-  --color-dark: #121212;
+  --color-dark-grey: #1c1c1c;
+  --color-light-grey: #2c2c2c;
+  --color-lighter-grey: #d3d3d3;
   --color-white: #fff;
 
   --app-background: var(--color-white);
-  --app-heading: var(--color-dark);
+
+  --app-header-background: var(--color-white);
+  --app-header-border-bottom-color: var(--color-lighter-grey);
+  --app-header-color: var(--color-light-grey);
 }
 
 .dark {
-  --color-dark: #121212;
+  --color-dark-grey: #1c1c1c;
+  --color-light-grey: #292929;
   --color-white: #fff;
 
-  --app-background: var(--color-dark);
-  --app-heading: var(--color-white);
+  --app-background: var(--color-dark-grey);
+
+  --app-header-background: var(--color-light-grey);
+  --app-header-border-bottom-color: var(--color-dark-grey);
+  --app-header-color: var(--color-white);
 }

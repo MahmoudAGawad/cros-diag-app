@@ -8,6 +8,9 @@
  */
 
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Theme } from 'src/app/core/enums/global.enums';
+import { ThemeService } from './core/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -15,25 +18,26 @@ import { Component, HostBinding, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  private _theme: string = 'dark';
-  @HostBinding('class') private _cssClass!: string;
-
-  get theme() {
-    return this._theme;
-  }
+  @HostBinding('class') private _cssClass!: Theme;
+  private _themeSubscription!: Subscription;
 
   get cssClass() {
     return this._cssClass;
   }
 
-  constructor() {}
+  constructor(private _themeService: ThemeService) {}
 
   ngOnInit() {
-    this._cssClass = this.theme;
+    this._cssClass = this._themeService.theme;
+    // listen to theme updates from themeService
+    this._themeSubscription = this._themeService.subscribeOnThemeChange(
+      (theme: Theme) => {
+        this._cssClass = theme;
+      }
+    );
   }
 
-  toggleTheme() {
-    this._theme = this.theme === 'light' ? 'dark' : 'light';
-    this._cssClass = this.theme;
+  ngOnDestroy() {
+    this._themeSubscription.unsubscribe();
   }
 }
