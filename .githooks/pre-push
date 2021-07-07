@@ -1,8 +1,11 @@
 #!/bin/sh
 
+set -e
+
 cd diagnostics-app
 npm run script:ci
-pwa_status=$?
 cd ..
 
-exit $pwa_status
+cd diagnostics-extension
+npm run script:ci
+cd ..
