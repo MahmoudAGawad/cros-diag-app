@@ -17,7 +17,6 @@ describe('integration: component: header', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let service: ThemeService;
-  let button: HTMLButtonElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -32,10 +31,12 @@ describe('integration: component: header', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     service = TestBed.inject(ThemeService);
-    button = fixture.debugElement.query(By.css('button')).nativeElement;
   });
 
   it('service should emit event on click', () => {
+    let button: HTMLButtonElement = fixture.debugElement.query(
+      By.css('#btnToggleTheme')
+    ).nativeElement;
     spyOn(service, 'toggleTheme').and.callThrough();
     expect(component.isDarkModeActivated()).toBeTrue();
     button.click();
@@ -45,14 +46,17 @@ describe('integration: component: header', () => {
 
   it('renders correct theme icon', () => {
     let iconEl: HTMLElement = fixture.debugElement.query(
-      By.css('mat-icon')
+      By.css('#iconTheme')
+    ).nativeElement;
+    let button: HTMLButtonElement = fixture.debugElement.query(
+      By.css('#btnToggleTheme')
     ).nativeElement;
     expect(component.isDarkModeActivated()).toBeTrue();
     // It renders on DOM as <mat-icon>light_mode</mat-icon>
     expect(iconEl.textContent).toBe('light_mode');
     button.click();
     fixture.detectChanges();
-    iconEl = fixture.debugElement.query(By.css('mat-icon')).nativeElement;
+    iconEl = fixture.debugElement.query(By.css('#iconTheme')).nativeElement;
     expect(component.isDarkModeActivated()).toBe(false);
     expect(iconEl.textContent).toBe('dark_mode');
   });

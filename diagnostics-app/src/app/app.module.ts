@@ -10,19 +10,20 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, ContentLayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,9 +33,9 @@ import { HeaderComponent } from './layout/header/header.component';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    BrowserAnimationsModule,
     CoreModule,
     SharedModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

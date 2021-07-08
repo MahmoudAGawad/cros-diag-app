@@ -14,7 +14,6 @@ import { HeaderComponent } from './header.component';
 describe('unit: component: header', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-  let button: HTMLButtonElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -27,7 +26,6 @@ describe('unit: component: header', () => {
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    button = fixture.debugElement.query(By.css('button')).nativeElement;
   });
 
   it('should create', () => {
@@ -37,8 +35,24 @@ describe('unit: component: header', () => {
 
   it('calls onToggleTheme on button click', () => {
     spyOn(component, 'onToggleTheme');
+    let button: HTMLButtonElement = fixture.debugElement.query(
+      By.css('#btnToggleTheme')
+    ).nativeElement;
     button.click();
     fixture.detectChanges();
     expect(component.onToggleTheme).toHaveBeenCalled();
+  });
+
+  it('should emit event on btnToggleDrawer click', () => {
+    spyOn(component, 'onToggleDrawer').and.callThrough();
+    spyOn(component.toggleDrawer, 'emit');
+
+    let button: HTMLButtonElement = fixture.debugElement.query(
+      By.css('#btnToggleDrawer')
+    ).nativeElement;
+
+    button.click();
+    expect(component.onToggleDrawer).toHaveBeenCalled();
+    expect(component.toggleDrawer.emit).toHaveBeenCalled();
   });
 });

@@ -15,6 +15,13 @@
   --app-header-background: var(--color-white);
   --app-header-border-bottom-color: var(--color-lighter-grey);
   --app-header-color: var(--color-light-grey);
+
+  --app-sidenav-background: var(--color-white);
+  --app-sidenav-color: var(--color-dark-grey);
+  --app-sidenav-border-right-color: var(--color-lighter-grey);
+
+  --app-content-background: var(--color-white);
+  --app-content-color: var(--color-dark-grey);
 }
 
 .dark {
@@ -24,7 +31,15 @@
 
   --app-background: var(--color-dark-grey);
 
+  --color-white: #fff;
+
   --app-header-background: var(--color-light-grey);
   --app-header-border-bottom-color: var(--color-dark-grey);
   --app-header-color: var(--color-white);
+
+  --app-sidenav-background: var(--color-light-grey);
+  --app-sidenav-color: var(--color-white);
+
+  --app-content-background: var(--color-dark-grey);
+  --app-content-color: var(--color-white);
 }

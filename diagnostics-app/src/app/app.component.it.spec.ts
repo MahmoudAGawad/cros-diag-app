@@ -9,9 +9,11 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+
 import { Theme } from './core/enums/global.enums';
 import { ThemeService } from './core/services/theme.service';
+
+import { AppComponent } from './app.component';
 
 describe('integration: component: app', () => {
   let fixture: ComponentFixture<AppComponent>;
