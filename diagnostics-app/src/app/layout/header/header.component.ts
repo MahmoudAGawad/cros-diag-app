@@ -7,7 +7,7 @@
  * Imported by app.module.ts
  */
 
-import { Component, OnDestroy } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Theme } from 'src/app/core/enums/global.enums';
 import { ThemeService } from 'src/app/core/services/theme.service';
 
@@ -17,10 +17,16 @@ import { ThemeService } from 'src/app/core/services/theme.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  @Output() toggleDrawer = new EventEmitter<void>();
+
   constructor(private _themeService: ThemeService) {}
 
   onToggleTheme() {
     this._themeService.toggleTheme();
+  }
+
+  onToggleDrawer() {
+    this.toggleDrawer.emit();
   }
 
   isDarkModeActivated() {
