@@ -7,7 +7,7 @@
     "build": "webpack",
     "postbuild": "cp -R public/** build",
     "lint": "eslint . --ext .ts",
-    "test": "jest --passWithNoTests",
+    "test": "jest --passWithNoTests --coverage",
     "script:ci": "sh ./scripts/ci.sh"
   },
   "keywords": [],
