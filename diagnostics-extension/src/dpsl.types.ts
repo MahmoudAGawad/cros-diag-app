@@ -236,3 +236,32 @@ export interface DiskReadRoutineParams {
   lengthSeconds: number;
   fileSizeMB: number;
 }
+
+export type DpslTypes =
+  | BacklightInfo
+  | BacklightInfoObject
+  | BacklightInfo
+  | BatteryInfo
+  | BluetoothInfoObject
+  | BluetoothInfo
+  | CpuInfo
+  | VpdInfo
+  | CpuCStateInfo
+  | LogicalCpuInfo
+  | PhysicalCpuInfo
+  | CpuInfo
+  | FanInfoObject
+  | FanInfo
+  | MemoryInfo
+  | BlockDeviceInfoObject
+  | BlockDeviceInfo
+  | StatefulPartitionInfo
+  | TimezoneInfo
+  | RoutineStatus
+  | BatteryChargeRoutineParams
+  | BatteryDischargeRoutineParams
+  | NvmeWearLevelRoutineParams
+  | PowerAcRoutineParams
+  | CpuRoutineDurationParams
+  | CpuPrimeSearchRoutineParams
+  | DiskReadRoutineParams;
