@@ -21,9 +21,17 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
+import { SideNavComponent } from './layout/side-nav/side-nav.component';
+import { SideNavItemComponent } from './layout/side-nav/side-nav-item/side-nav-item.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ContentLayoutComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    ContentLayoutComponent,
+    SideNavComponent,
+    SideNavItemComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
