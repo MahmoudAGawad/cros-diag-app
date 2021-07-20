@@ -18,6 +18,8 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <app-header (toggleDrawer)="drawer.toggle()"></app-header>
-    <div class="app-content-container"></div>
+    <div class="app-content-container">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

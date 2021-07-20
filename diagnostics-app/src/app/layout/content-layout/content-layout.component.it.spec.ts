@@ -7,14 +7,14 @@
  */
 
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MatSidenav } from '@angular/material/sidenav';
+import { By } from '@angular/platform-browser';
 
 import { SharedModule } from 'src/app/shared/shared.module';
 
-import { ContentLayoutComponent } from './content-layout.component';
 import { HeaderComponent } from '../header/header.component';
+import { ContentLayoutComponent } from './content-layout.component';
 
 describe('integration: component ContentLayout', () => {
   let component: ContentLayoutComponent;

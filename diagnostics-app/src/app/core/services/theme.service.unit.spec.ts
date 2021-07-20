@@ -7,8 +7,8 @@
  */
 
 import { TestBed } from '@angular/core/testing';
-import { Theme } from '../enums/global.enums';
 
+import { Theme } from '../enums/global.enums';
 import { ThemeService } from './theme.service';
 
 describe('unit: service: theme', () => {
