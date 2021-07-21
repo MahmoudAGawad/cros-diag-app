@@ -11,7 +11,7 @@ import {
   TelemetryServiceProvider,
 } from './telemetry.service';
 import * as fakeData from './fake_telemetry.data';
-import { DpslTypes } from './dpsl.types';
+import { DpslTypes } from './common/dpsl.types';
 
 describe('should return instance of FakeTelemetryService', () => {
   const telemetryService: TelemetryService =

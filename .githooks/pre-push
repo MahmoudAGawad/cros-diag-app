@@ -2,6 +2,8 @@
 
 set -e
 
+sh ./scripts/compare-common.sh
+
 cd diagnostics-app
 npm run script:ci
 cd ..
