@@ -13,10 +13,21 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, BrowserAnimationsModule, MaterialModule],
-  exports: [CommonModule, BrowserAnimationsModule, MaterialModule],
+  imports: [
+    CommonModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FlexLayoutModule,
+  ],
+  exports: [
+    CommonModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FlexLayoutModule,
+  ],
 })
 export class SharedModule {}
