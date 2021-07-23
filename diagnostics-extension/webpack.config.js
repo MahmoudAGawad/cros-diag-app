@@ -18,4 +18,7 @@ module.exports = {
     filename: "sw.js",
     path: path.resolve(__dirname, "build"),
   },
+  resolve: {
+    extensions: [".ts"],
+  },
 };
