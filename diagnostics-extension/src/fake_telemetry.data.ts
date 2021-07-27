@@ -17,7 +17,7 @@ import {
   StatefulPartitionInfo,
   TimezoneInfo,
   VpdInfo,
-} from './dpsl.types';
+} from '@common/dpsl';
 
 export const backlightInfo = (): BacklightInfo => [
   {
