@@ -6,8 +6,6 @@
  * @fileoverview dpsl.* types definitions.
  */
 
-// dpsl.telemetry.* type definitions
-
 /**
  * Response message containing Backlight Info
  */

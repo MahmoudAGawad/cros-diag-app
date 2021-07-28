@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Unit tests for telemetry.service
+ * @fileoverview Unit tests for src/services/telemetry
  */
 
 import {
   TelemetryService,
   TelemetryServiceProvider,
-} from '../telemetry.service';
-import * as fakeData from '../fake_telemetry.data';
+} from '../../services/telemetry';
+import * as fakeData from '../../services/fake_telemetry.data';
 import { DpslTypes } from '@common/dpsl';
 
 describe('should return instance of FakeTelemetryService', () => {
