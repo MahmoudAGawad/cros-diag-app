@@ -3,5 +3,5 @@
 // found in the LICENSE file.
 
 export const environment = {
-  production: true
+  production: true,
 };
