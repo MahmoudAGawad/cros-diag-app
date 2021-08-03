@@ -61,23 +61,23 @@ export const memoryInfo = (): MemoryInfo => ({
   totalMemoryKib: 2000500,
   freeMemoryKib: 1245500,
   availableMemoryKib: 755000,
-  pageFaultsSinceLastBoot: BigInt(1200000034),
+  pageFaultsSinceLastBoot: '1200000034',
 });
 
 export const blockDeviceInfo = (): BlockDeviceInfo => [
   {
     path: 'path',
-    size: BigInt(12300000),
+    size: '12300000',
     type: 'type',
     manufacturerId: 1445,
     name: 'name',
     serial: '45xx-233-bvf',
-    bytesReadSinceLastBoot: BigInt(12300000),
-    bytesWrittenSinceLastBoot: BigInt(12300000),
-    readTimeSecondsSinceLastBoot: BigInt(12300000),
-    writeTimeSecondsSinceLastBoot: BigInt(12300000),
-    ioTimeSecondsSinceLastBoot: BigInt(12300000),
-    discardTimeSecondsSinceLastBoot: BigInt(12300000),
+    bytesReadSinceLastBoot: '12300000',
+    bytesWrittenSinceLastBoot: '12300000',
+    readTimeSecondsSinceLastBoot: '12300000',
+    writeTimeSecondsSinceLastBoot: '12300000',
+    ioTimeSecondsSinceLastBoot: '12300000',
+    discardTimeSecondsSinceLastBoot: '12300000',
   },
 ];
 
@@ -87,12 +87,12 @@ export const timezoneInfo = (): TimezoneInfo => ({
 });
 
 export const statefulPartitionInfo = (): StatefulPartitionInfo => ({
-  availableSpace: BigInt(1340000),
-  totalSpace: BigInt(2005000),
+  availableSpace: '1340000',
+  totalSpace: '2005000',
 });
 
 export const batteryInfo = (): BatteryInfo => ({
-  cycleCount: BigInt(75),
+  cycleCount: '75',
   voltageNow: 14,
   vendor: 'google',
   serialNumber: 'test-bat-111',
@@ -105,7 +105,7 @@ export const batteryInfo = (): BatteryInfo => ({
   technology: 'plutonium',
   status: 'good',
   manufactureDate: '2019-07-09T16:59:39.787Z',
-  temperature: BigInt(43),
+  temperature: '43',
 });
 
 export const cpuInfo = (): CpuInfo => ({

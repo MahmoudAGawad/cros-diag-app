@@ -24,7 +24,7 @@ export type BacklightInfo = BacklightInfoObject[];
  * Response message containing Battery Info
  */
 export interface BatteryInfo {
-  cycleCount: bigint;
+  cycleCount: string;
   voltageNow: number;
   vendor: string;
   serialNumber: string;
@@ -37,7 +37,7 @@ export interface BatteryInfo {
   technology: string;
   status: string;
   manufactureDate: string;
-  temperature: bigint;
+  temperature: string;
 }
 
 /**
@@ -119,7 +119,7 @@ export interface MemoryInfo {
   totalMemoryKib: number;
   freeMemoryKib: number;
   availableMemoryKib: number;
-  pageFaultsSinceLastBoot: bigint;
+  pageFaultsSinceLastBoot: string;
 }
 
 /**
@@ -127,17 +127,17 @@ export interface MemoryInfo {
  */
 export interface BlockDeviceInfoObject {
   path: string;
-  size: bigint;
+  size: string;
   type: string;
   manufacturerId: number;
   name: string;
   serial: string;
-  bytesReadSinceLastBoot: bigint;
-  bytesWrittenSinceLastBoot: bigint;
-  readTimeSecondsSinceLastBoot: bigint;
-  writeTimeSecondsSinceLastBoot: bigint;
-  ioTimeSecondsSinceLastBoot: bigint;
-  discardTimeSecondsSinceLastBoot: bigint;
+  bytesReadSinceLastBoot: string;
+  bytesWrittenSinceLastBoot: string;
+  readTimeSecondsSinceLastBoot: string;
+  writeTimeSecondsSinceLastBoot: string;
+  ioTimeSecondsSinceLastBoot: string;
+  discardTimeSecondsSinceLastBoot: string;
 }
 
 /**
@@ -149,8 +149,8 @@ export type BlockDeviceInfo = BlockDeviceInfoObject[];
  * Response message containing StatefulPartition Info
  */
 export interface StatefulPartitionInfo {
-  availableSpace: bigint;
-  totalSpace: bigint;
+  availableSpace: string;
+  totalSpace: string;
 }
 
 /**
