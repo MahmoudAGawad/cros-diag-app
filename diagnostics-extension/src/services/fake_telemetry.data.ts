@@ -58,26 +58,26 @@ export const fanInfo = (): FanInfo => [
 ];
 
 export const memoryInfo = (): MemoryInfo => ({
-  totalMemoryKib: 2000500,
-  freeMemoryKib: 1245500,
-  availableMemoryKib: 755000,
-  pageFaultsSinceLastBoot: '1200000034',
+  totalMemoryKib: 16270856,
+  freeMemoryKib: 13067496,
+  availableMemoryKib: 14810656,
+  pageFaultsSinceLastBoot: '62076622',
 });
 
 export const blockDeviceInfo = (): BlockDeviceInfo => [
   {
-    path: 'path',
-    size: '12300000',
-    type: 'type',
-    manufacturerId: 1445,
-    name: 'name',
-    serial: '45xx-233-bvf',
-    bytesReadSinceLastBoot: '12300000',
-    bytesWrittenSinceLastBoot: '12300000',
-    readTimeSecondsSinceLastBoot: '12300000',
-    writeTimeSecondsSinceLastBoot: '12300000',
-    ioTimeSecondsSinceLastBoot: '12300000',
-    discardTimeSecondsSinceLastBoot: '12300000',
+    path: '/dev/nvme0n1',
+    size: '256060514304',
+    type: 'block:nvme:pci:pci',
+    manufacturerId: 0,
+    name: 'WDC PC SN520 SDAPTUW-256G-1006',
+    serial: '4294967295',
+    bytesReadSinceLastBoot: '5274074112',
+    bytesWrittenSinceLastBoot: '13497171968',
+    readTimeSecondsSinceLastBoot: '40',
+    writeTimeSecondsSinceLastBoot: '1077',
+    ioTimeSecondsSinceLastBoot: '152',
+    discardTimeSecondsSinceLastBoot: '0',
   },
 ];
 
@@ -109,23 +109,363 @@ export const batteryInfo = (): BatteryInfo => ({
 });
 
 export const cpuInfo = (): CpuInfo => ({
-  numTotalThreads: 2000,
-  architecture: 'x64',
+  numTotalThreads: 8,
+  architecture: 'x86_64',
   physicalCpus: [
     {
-      modelName: 'intel i7-8850 8th gen',
+      modelName: 'Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz',
       logicalCpus: [
         {
           AcStates: [
             {
-              name: 'ac1',
-              timeInStateSinceLastBootUs: 10300,
+              name: 'C7s',
+              timeInStateSinceLastBootUs: 390138,
+            },
+            {
+              name: 'C3',
+              timeInStateSinceLastBootUs: 49855211,
+            },
+            {
+              name: 'C1',
+              timeInStateSinceLastBootUs: 30454853,
+            },
+            {
+              name: 'C10',
+              timeInStateSinceLastBootUs: 76313915692,
+            },
+            {
+              name: 'C8',
+              timeInStateSinceLastBootUs: 1383657700,
+            },
+            {
+              name: 'C6',
+              timeInStateSinceLastBootUs: 1634102253,
+            },
+            {
+              name: 'C1E',
+              timeInStateSinceLastBootUs: 70434254,
+            },
+            {
+              name: 'POLL',
+              timeInStateSinceLastBootUs: 340080,
+            },
+            {
+              name: 'C9',
+              timeInStateSinceLastBootUs: 127594822,
             },
           ],
-          IdleTimeMs: 5030,
-          ScalingCurrentFrequencyKhz: 1100,
-          ScalingMaxFrequencyKhz: 2000,
-          maxClockSpeedKhz: 3000,
+          IdleTimeMs: 7963395,
+          ScalingCurrentFrequencyKhz: 3042798,
+          ScalingMaxFrequencyKhz: 4900000,
+          maxClockSpeedKhz: 4900000,
+        },
+        {
+          AcStates: [
+            {
+              name: 'C7s',
+              timeInStateSinceLastBootUs: 390138,
+            },
+            {
+              name: 'C3',
+              timeInStateSinceLastBootUs: 49855211,
+            },
+            {
+              name: 'C1',
+              timeInStateSinceLastBootUs: 30454853,
+            },
+            {
+              name: 'C10',
+              timeInStateSinceLastBootUs: 76313915692,
+            },
+            {
+              name: 'C8',
+              timeInStateSinceLastBootUs: 1383657700,
+            },
+            {
+              name: 'C6',
+              timeInStateSinceLastBootUs: 1634102253,
+            },
+            {
+              name: 'C1E',
+              timeInStateSinceLastBootUs: 70434254,
+            },
+            {
+              name: 'POLL',
+              timeInStateSinceLastBootUs: 340080,
+            },
+            {
+              name: 'C9',
+              timeInStateSinceLastBootUs: 127594822,
+            },
+          ],
+          IdleTimeMs: 7963395,
+          ScalingCurrentFrequencyKhz: 3042798,
+          ScalingMaxFrequencyKhz: 4900000,
+          maxClockSpeedKhz: 4900000,
+        },
+        {
+          AcStates: [
+            {
+              name: 'C7s',
+              timeInStateSinceLastBootUs: 390138,
+            },
+            {
+              name: 'C3',
+              timeInStateSinceLastBootUs: 49855211,
+            },
+            {
+              name: 'C1',
+              timeInStateSinceLastBootUs: 30454853,
+            },
+            {
+              name: 'C10',
+              timeInStateSinceLastBootUs: 76313915692,
+            },
+            {
+              name: 'C8',
+              timeInStateSinceLastBootUs: 1383657700,
+            },
+            {
+              name: 'C6',
+              timeInStateSinceLastBootUs: 1634102253,
+            },
+            {
+              name: 'C1E',
+              timeInStateSinceLastBootUs: 70434254,
+            },
+            {
+              name: 'POLL',
+              timeInStateSinceLastBootUs: 340080,
+            },
+            {
+              name: 'C9',
+              timeInStateSinceLastBootUs: 127594822,
+            },
+          ],
+          IdleTimeMs: 7963395,
+          ScalingCurrentFrequencyKhz: 3042798,
+          ScalingMaxFrequencyKhz: 4900000,
+          maxClockSpeedKhz: 4900000,
+        },
+        {
+          AcStates: [
+            {
+              name: 'C7s',
+              timeInStateSinceLastBootUs: 390138,
+            },
+            {
+              name: 'C3',
+              timeInStateSinceLastBootUs: 49855211,
+            },
+            {
+              name: 'C1',
+              timeInStateSinceLastBootUs: 30454853,
+            },
+            {
+              name: 'C10',
+              timeInStateSinceLastBootUs: 76313915692,
+            },
+            {
+              name: 'C8',
+              timeInStateSinceLastBootUs: 1383657700,
+            },
+            {
+              name: 'C6',
+              timeInStateSinceLastBootUs: 1634102253,
+            },
+            {
+              name: 'C1E',
+              timeInStateSinceLastBootUs: 70434254,
+            },
+            {
+              name: 'POLL',
+              timeInStateSinceLastBootUs: 340080,
+            },
+            {
+              name: 'C9',
+              timeInStateSinceLastBootUs: 127594822,
+            },
+          ],
+          IdleTimeMs: 7963395,
+          ScalingCurrentFrequencyKhz: 3042798,
+          ScalingMaxFrequencyKhz: 4900000,
+          maxClockSpeedKhz: 4900000,
+        },
+        {
+          AcStates: [
+            {
+              name: 'C7s',
+              timeInStateSinceLastBootUs: 390138,
+            },
+            {
+              name: 'C3',
+              timeInStateSinceLastBootUs: 49855211,
+            },
+            {
+              name: 'C1',
+              timeInStateSinceLastBootUs: 30454853,
+            },
+            {
+              name: 'C10',
+              timeInStateSinceLastBootUs: 76313915692,
+            },
+            {
+              name: 'C8',
+              timeInStateSinceLastBootUs: 1383657700,
+            },
+            {
+              name: 'C6',
+              timeInStateSinceLastBootUs: 1634102253,
+            },
+            {
+              name: 'C1E',
+              timeInStateSinceLastBootUs: 70434254,
+            },
+            {
+              name: 'POLL',
+              timeInStateSinceLastBootUs: 340080,
+            },
+            {
+              name: 'C9',
+              timeInStateSinceLastBootUs: 127594822,
+            },
+          ],
+          IdleTimeMs: 7963395,
+          ScalingCurrentFrequencyKhz: 3042798,
+          ScalingMaxFrequencyKhz: 4900000,
+          maxClockSpeedKhz: 4900000,
+        },
+        {
+          AcStates: [
+            {
+              name: 'C7s',
+              timeInStateSinceLastBootUs: 390138,
+            },
+            {
+              name: 'C3',
+              timeInStateSinceLastBootUs: 49855211,
+            },
+            {
+              name: 'C1',
+              timeInStateSinceLastBootUs: 30454853,
+            },
+            {
+              name: 'C10',
+              timeInStateSinceLastBootUs: 76313915692,
+            },
+            {
+              name: 'C8',
+              timeInStateSinceLastBootUs: 1383657700,
+            },
+            {
+              name: 'C6',
+              timeInStateSinceLastBootUs: 1634102253,
+            },
+            {
+              name: 'C1E',
+              timeInStateSinceLastBootUs: 70434254,
+            },
+            {
+              name: 'POLL',
+              timeInStateSinceLastBootUs: 340080,
+            },
+            {
+              name: 'C9',
+              timeInStateSinceLastBootUs: 127594822,
+            },
+          ],
+          IdleTimeMs: 7963395,
+          ScalingCurrentFrequencyKhz: 3042798,
+          ScalingMaxFrequencyKhz: 4900000,
+          maxClockSpeedKhz: 4900000,
+        },
+        {
+          AcStates: [
+            {
+              name: 'C7s',
+              timeInStateSinceLastBootUs: 390138,
+            },
+            {
+              name: 'C3',
+              timeInStateSinceLastBootUs: 49855211,
+            },
+            {
+              name: 'C1',
+              timeInStateSinceLastBootUs: 30454853,
+            },
+            {
+              name: 'C10',
+              timeInStateSinceLastBootUs: 76313915692,
+            },
+            {
+              name: 'C8',
+              timeInStateSinceLastBootUs: 1383657700,
+            },
+            {
+              name: 'C6',
+              timeInStateSinceLastBootUs: 1634102253,
+            },
+            {
+              name: 'C1E',
+              timeInStateSinceLastBootUs: 70434254,
+            },
+            {
+              name: 'POLL',
+              timeInStateSinceLastBootUs: 340080,
+            },
+            {
+              name: 'C9',
+              timeInStateSinceLastBootUs: 127594822,
+            },
+          ],
+          IdleTimeMs: 7963395,
+          ScalingCurrentFrequencyKhz: 3042798,
+          ScalingMaxFrequencyKhz: 4900000,
+          maxClockSpeedKhz: 4900000,
+        },
+        {
+          AcStates: [
+            {
+              name: 'C7s',
+              timeInStateSinceLastBootUs: 390138,
+            },
+            {
+              name: 'C3',
+              timeInStateSinceLastBootUs: 49855211,
+            },
+            {
+              name: 'C1',
+              timeInStateSinceLastBootUs: 30454853,
+            },
+            {
+              name: 'C10',
+              timeInStateSinceLastBootUs: 76313915692,
+            },
+            {
+              name: 'C8',
+              timeInStateSinceLastBootUs: 1383657700,
+            },
+            {
+              name: 'C6',
+              timeInStateSinceLastBootUs: 1634102253,
+            },
+            {
+              name: 'C1E',
+              timeInStateSinceLastBootUs: 70434254,
+            },
+            {
+              name: 'POLL',
+              timeInStateSinceLastBootUs: 340080,
+            },
+            {
+              name: 'C9',
+              timeInStateSinceLastBootUs: 127594822,
+            },
+          ],
+          IdleTimeMs: 7963395,
+          ScalingCurrentFrequencyKhz: 3042798,
+          ScalingMaxFrequencyKhz: 4900000,
+          maxClockSpeedKhz: 4900000,
         },
       ],
     },

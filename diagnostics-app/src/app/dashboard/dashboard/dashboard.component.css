@@ -28,7 +28,7 @@
   margin-bottom: 1rem;
 }
 
-.card-container {
+.card-container-placeholder {
   background-color: var(--app-dashboard-card-background);
   padding: 3rem;
   border-radius: 3px;
@@ -36,4 +36,13 @@
   justify-content: center;
   font-size: 24px;
   color: var(--app-dashboard-card-color);
+}
+
+.card-container {
+  background-color: var(--app-dashboard-card-background);
+  padding: .5rem 1rem;
+  border-radius: 3px;
+  font-size: 18px;
+  color: var(--app-dashboard-card-color);
+  border: 1px solid var(--app-dashboard-card-border-color);
 }
