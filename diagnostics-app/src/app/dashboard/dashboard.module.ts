@@ -7,13 +7,22 @@
  * Imported by app.module.ts
  */
 
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from '../shared/shared.module';
+import { MemoryComponent } from './cards/memory/memory.component';
+import { StorageComponent } from './cards/storage/storage.component';
+import { CpuComponent } from './cards/cpu/cpu.component';
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [
+    DashboardComponent,
+    MemoryComponent,
+    StorageComponent,
+    CpuComponent,
+  ],
   imports: [CommonModule, SharedModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DashboardModule {}
