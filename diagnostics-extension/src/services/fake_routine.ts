@@ -2,23 +2,27 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import { RoutineStatus } from '@common/dpsl';
-
 /**
  * @fileoverview Mock Routine class.
  * To be replaced by Routine from dpsl package.
  */
 
+import { RoutineStatus } from '@common/dpsl';
+
 export class Routine {
-  private id: number;
+  private _id: number;
 
   constructor(id: number) {
-    this.id = id;
+    this._id = id;
+  }
+
+  get id(): number {
+    return this._id;
   }
 
   async _genericSendCommand(command: string): Promise<RoutineStatus> {
     const message = {
-      routineId: this.id,
+      routineId: this._id,
       command: command,
       includeOutput: true,
     };
