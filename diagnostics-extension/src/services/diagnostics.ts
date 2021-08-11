@@ -6,7 +6,7 @@
  * @fileoverview Classes related to telemetry
  */
 
-import { RoutineStatus } from '@common/dpsl';
+import { DiagnosticsParams, RoutineStatus } from '@common/dpsl';
 import { DiagnosticsRoutineName } from '@common/message';
 import { dpsl } from './fake_dpsl';
 import { Routine } from './fake_routine';
@@ -16,7 +16,10 @@ import { Routine } from './fake_routine';
  * service to run diagnostic routines
  */
 export abstract class DiagnosticsService {
-  abstract runRoutine(name: DiagnosticsRoutineName): number;
+  abstract runRoutine(
+    name: DiagnosticsRoutineName,
+    params?: DiagnosticsParams
+  ): number;
   abstract stopRoutine(id: number): Promise<RoutineStatus>;
   abstract resumeRoutine(id: number): Promise<RoutineStatus>;
   abstract getRoutineStatus(id: number): Promise<RoutineStatus>;
@@ -36,7 +39,8 @@ const mapRoutineNameToMethod = (name: DiagnosticsRoutineName) => {
  * @extends DiagnosticsService
  */
 export class FakeDiagnosticsService implements DiagnosticsService {
-  runRoutine(name: DiagnosticsRoutineName): number {
+  runRoutine(name: DiagnosticsRoutineName, params?: DiagnosticsParams): number {
+    params && console.log('Recieved params', params);
     const routineMethod = mapRoutineNameToMethod(name);
     if (!routineMethod) return -1;
     const routine = routineMethod();

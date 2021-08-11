@@ -32,6 +32,10 @@ export const enum ResponseErrorInfoMessage {
   InvalidRequestType = 'Invalid or missing request type.',
   InvalidTelemetryInfoType = 'The requested telemetry infoType is either invalid or missing.',
   MissingTelemetryRequest = 'Missing telemetry object in request.',
+  MissingDiagnosticsRequest = 'Missing diagnostics object in request.',
+  InvalidDiagnosticsAction = 'The requested diagnostics action is either invalid or missing.',
+  InvalidDiagnosticsRoutineName = 'The requested diagnostics routine name is either invalid or missing.',
+  InvalidDiagnosticsRoutineId = 'The requested diagnostics routine id is either invalid or missing.',
 }
 
 export const enum DiagnosticsRoutineName {
@@ -52,9 +56,9 @@ export interface Request {
   };
   diagnostics?: {
     action: DiagnosticsAction;
+    routineId?: number;
     routineName?: DiagnosticsRoutineName;
     params?: DiagnosticsParams;
-    routineId?: string;
   };
 }
 
@@ -67,7 +71,8 @@ export interface TelemetryResponse {
 }
 
 export interface DiagnosticsResponse {
-  routine: RoutineStatus;
+  routineId: number;
+  routineStatus: RoutineStatus;
 }
 
 export interface Response {
