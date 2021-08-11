@@ -7,7 +7,7 @@
  * diagostics-app and diagnostics-extension
  */
 
-import { DpslTypes } from './dpsl';
+import { DpslTypes, DiagnosticsParams, RoutineStatus } from './dpsl';
 
 export const enum RequestType {
   TELEMETRY = 'telemetry',
@@ -34,10 +34,27 @@ export const enum ResponseErrorInfoMessage {
   MissingTelemetryRequest = 'Missing telemetry object in request.',
 }
 
+export const enum DiagnosticsRoutineName {
+  RunBatteryCapacityRoutine = 'runBatteryCapacityRoutine',
+}
+
+export const enum DiagnosticsAction {
+  START = 'start',
+  STATUS = 'status',
+  RESUME = 'resume',
+  STOP = 'stop',
+}
+
 export interface Request {
   type: RequestType;
   telemetry?: {
     infoType: TelemetryInfoType;
+  };
+  diagnostics?: {
+    action: DiagnosticsAction;
+    routineName?: DiagnosticsRoutineName;
+    params?: DiagnosticsParams;
+    routineId?: string;
   };
 }
 
@@ -49,8 +66,13 @@ export interface TelemetryResponse {
   info: DpslTypes;
 }
 
+export interface DiagnosticsResponse {
+  routine: RoutineStatus;
+}
+
 export interface Response {
   success: Boolean;
   error?: Error;
   telemetry?: TelemetryResponse;
+  diagnostics?: DiagnosticsResponse;
 }
