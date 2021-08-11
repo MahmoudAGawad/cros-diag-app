@@ -35,7 +35,7 @@ export const enum ResponseErrorInfoMessage {
 }
 
 export const enum DiagnosticsRoutineName {
-  RunBatteryCapacityRoutine = 'runBatteryCapacityRoutine',
+  RUN_BATTERY_CAPACITY_ROUTINE = 'runBatteryCapacityRoutine',
 }
 
 export const enum DiagnosticsAction {
