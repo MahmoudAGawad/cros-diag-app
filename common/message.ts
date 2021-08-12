@@ -49,17 +49,21 @@ export const enum DiagnosticsAction {
   STOP = 'stop',
 }
 
+export interface TelemetryRequest {
+  infoType: TelemetryInfoType;
+}
+
+export interface DiagnosticsRequest {
+  action: DiagnosticsAction;
+  routineId?: number;
+  routineName?: DiagnosticsRoutineName;
+  params?: DiagnosticsParams;
+}
+
 export interface Request {
   type: RequestType;
-  telemetry?: {
-    infoType: TelemetryInfoType;
-  };
-  diagnostics?: {
-    action: DiagnosticsAction;
-    routineId?: number;
-    routineName?: DiagnosticsRoutineName;
-    params?: DiagnosticsParams;
-  };
+  telemetry?: TelemetryRequest;
+  diagnostics?: DiagnosticsRequest;
 }
 
 export interface Error {
