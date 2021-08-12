@@ -9,7 +9,11 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { NavigationList, DASHBOARD_NAV_DATA } from './side-nav.data';
+import {
+  NavigationList,
+  DASHBOARD_NAV_DATA,
+  DIAGNOSTICS_NAV_DATA,
+} from './side-nav.data';
 
 @Component({
   selector: 'app-side-nav',
@@ -17,7 +21,10 @@ import { NavigationList, DASHBOARD_NAV_DATA } from './side-nav.data';
   styleUrls: ['./side-nav.component.css'],
 })
 export class SideNavComponent implements OnInit {
-  private _navLists: NavigationList[] = [DASHBOARD_NAV_DATA];
+  private _navLists: NavigationList[] = [
+    DASHBOARD_NAV_DATA,
+    DIAGNOSTICS_NAV_DATA,
+  ];
 
   get navLists() {
     return this._navLists;

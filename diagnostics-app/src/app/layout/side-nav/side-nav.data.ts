@@ -23,3 +23,15 @@ export const DASHBOARD_NAV_DATA: NavigationList = {
   hasHeader: false,
   items: [{ icon: 'laptop_chromebook', link: '/dashboard', name: 'Dashboard' }],
 };
+
+export const DIAGNOSTICS_NAV_DATA: NavigationList = {
+  hasHeader: true,
+  header: 'Diagnostics',
+  items: [
+    {
+      icon: 'battery_full',
+      link: '/diagnostics/battery',
+      name: 'Battery',
+    },
+  ],
+};
