@@ -40,7 +40,7 @@ const handleStartRoutine = async (
       )
     );
   }
-  const routineId = diagnosticsService.runRoutine(routineName, params);
+  const routineId = await diagnosticsService.runRoutine(routineName, params);
   return handleRoutineOperation(
     routineId,
     routineOperationMap[DiagnosticsAction.STATUS],

@@ -19,7 +19,7 @@ export abstract class DiagnosticsService {
   abstract runRoutine(
     name: DiagnosticsRoutineName,
     params?: DiagnosticsParams
-  ): number;
+  ): Promise<number>;
   abstract stopRoutine(id: number): Promise<RoutineStatus>;
   abstract resumeRoutine(id: number): Promise<RoutineStatus>;
   abstract getRoutineStatus(id: number): Promise<RoutineStatus>;
@@ -39,25 +39,32 @@ const mapRoutineNameToMethod = (name: DiagnosticsRoutineName) => {
  * @extends DiagnosticsService
  */
 export class FakeDiagnosticsService implements DiagnosticsService {
-  runRoutine(name: DiagnosticsRoutineName, params?: DiagnosticsParams): number {
+  private _activeRoutines: { [key: number]: Routine } = {};
+
+  runRoutine = async (
+    name: DiagnosticsRoutineName,
+    params?: DiagnosticsParams
+  ): Promise<number> => {
     params && console.log('Recieved params', params);
-    const routineMethod = mapRoutineNameToMethod(name);
-    if (!routineMethod) return -1;
-    const routine = routineMethod();
+    const dpslRoutineMethod = mapRoutineNameToMethod(name);
+    if (!dpslRoutineMethod) return -1;
+    const routine = dpslRoutineMethod();
+    this._activeRoutines[routine.id] = routine;
     return routine.id;
-  }
-  stopRoutine(id: number): Promise<RoutineStatus> {
-    const routine = new Routine(id);
+  };
+  stopRoutine = (id: number): Promise<RoutineStatus> => {
+    const routine = this._activeRoutines[id];
+    delete this._activeRoutines[id];
     return routine.stop();
-  }
-  resumeRoutine(id: number): Promise<RoutineStatus> {
-    const routine = new Routine(id);
+  };
+  resumeRoutine = (id: number): Promise<RoutineStatus> => {
+    const routine = this._activeRoutines[id];
     return routine.resume();
-  }
-  getRoutineStatus(id: number): Promise<RoutineStatus> {
-    const routine = new Routine(id);
+  };
+  getRoutineStatus = (id: number): Promise<RoutineStatus> => {
+    const routine = this._activeRoutines[id];
     return routine.getStatus();
-  }
+  };
 }
 
 export class DiagnosticsServiceProvider {

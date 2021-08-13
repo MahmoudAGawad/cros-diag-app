@@ -40,14 +40,14 @@ export class Routine {
   /**
    * Returns current status of this routine.
    */
-  async getStatus(): Promise<RoutineStatus> {
+  getStatus(): Promise<RoutineStatus> {
     return this._genericSendCommand('get-status');
   }
 
   /**
    * Resumes this routine, e.g. when user prompts to run a waiting routine.
    */
-  async resume(): Promise<RoutineStatus> {
+  resume(): Promise<RoutineStatus> {
     return this._genericSendCommand('continue');
   }
 
@@ -55,7 +55,7 @@ export class Routine {
    * Stops this routine, if running, or remove otherwise.
    * Note: The routine cannot be restarted again.
    */
-  async stop(): Promise<RoutineStatus> {
+  stop(): Promise<RoutineStatus> {
     this._genericSendCommand('cancel');
     return this._genericSendCommand('remove');
   }
