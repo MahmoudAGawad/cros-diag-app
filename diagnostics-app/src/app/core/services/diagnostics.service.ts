@@ -42,17 +42,10 @@ export class DiagnosticsService implements DiagnosticsInterface {
     return { type: RequestType.DIAGNOSTICS, diagnostics: payload };
   };
 
-  private _runDiagnosticsRoutine: (
-    routineName: DiagnosticsRoutineName,
-    params?: DiagnosticsParams
-  ) => Promise<DiagnosticsResponse> = (routineName, params) => {
+  private _sendRequest: (request: Request) => Promise<DiagnosticsResponse> = (
+    request: Request
+  ) => {
     return new Promise((resolve, reject) => {
-      const payload: DiagnosticsRequest = {
-        action: DiagnosticsAction.START,
-        routineName: routineName,
-        params,
-      };
-      const request = this._constructDiagnosticsRequest(payload);
       try {
         //@ts-ignore
         window.chrome.runtime.sendMessage(
@@ -75,36 +68,29 @@ export class DiagnosticsService implements DiagnosticsInterface {
     });
   };
 
+  private _runDiagnosticsRoutine: (
+    routineName: DiagnosticsRoutineName,
+    params?: DiagnosticsParams
+  ) => Promise<DiagnosticsResponse> = (routineName, params) => {
+    const payload: DiagnosticsRequest = {
+      action: DiagnosticsAction.START,
+      routineName: routineName,
+      params,
+    };
+    const request = this._constructDiagnosticsRequest(payload);
+    return this._sendRequest(request);
+  };
+
   private _manageDiagnosticsRoutine: (
     action: DiagnosticsAction,
     routineId: number
   ) => Promise<DiagnosticsResponse> = (action, routineId) => {
-    return new Promise((resolve, reject) => {
-      const payload: DiagnosticsRequest = {
-        action,
-        routineId,
-      };
-      const request = this._constructDiagnosticsRequest(payload);
-      try {
-        //@ts-ignore
-        window.chrome.runtime.sendMessage(
-          this.extensionId,
-          request,
-          (response: Response) => {
-            if (!response.success) {
-              throw response.error;
-            }
-            if (!response.diagnostics) {
-              throw 'Invalid response';
-            } else {
-              resolve(response.diagnostics);
-            }
-          }
-        );
-      } catch (err) {
-        reject(err);
-      }
-    });
+    const payload: DiagnosticsRequest = {
+      action,
+      routineId,
+    };
+    const request = this._constructDiagnosticsRequest(payload);
+    return this._sendRequest(request);
   };
 
   constructor() {
