@@ -1,0 +1,15 @@
+<!--
+ Copyright 2021 The Chromium Authors. All rights reserved.
+ Use of this source code is governed by a BSD-style license that can be
+ found in the LICENSE file.
+-->
+
+<div class="app-telemetry-card">
+  <header>Backlight</header>
+  <div class="details">
+    <div class="backlight-object" *ngFor="let backlight of backlightData">
+      <span class="path">{{ backlight.path }}: </span>
+      <span class="percentage">{{ toPercentBacklight(backlight) }}%</span>
+    </div>
+  </div>
+</div>
