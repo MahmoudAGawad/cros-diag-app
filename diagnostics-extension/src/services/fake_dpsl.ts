@@ -16,7 +16,7 @@ const generateRandomId = () => {
 export const dpsl = {
   diagnostics: {
     battery: {
-      runCapacityRoutine: (): Routine => {
+      runCapacityRoutine: async (): Promise<Routine> => {
         const routineId = generateRandomId();
         return new Routine(routineId);
       },

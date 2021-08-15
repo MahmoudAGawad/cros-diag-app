@@ -7,7 +7,10 @@
  */
 
 import { DiagnosticsParams, RoutineStatus } from '@common/dpsl';
-import { DiagnosticsRoutineName } from '@common/message';
+import {
+  DiagnosticsRoutineName,
+  ResponseErrorInfoMessage,
+} from '@common/message';
 import { dpsl } from './fake_dpsl';
 import { Routine } from './fake_routine';
 
@@ -41,28 +44,37 @@ const mapRoutineNameToMethod = (name: DiagnosticsRoutineName) => {
 export class FakeDiagnosticsService implements DiagnosticsService {
   private _activeRoutines: { [key: number]: Routine } = {};
 
+  private _fetchRoutineById = (id: number) => {
+    if (!(id in this._activeRoutines)) {
+      throw ResponseErrorInfoMessage.InvalidDiagnosticsRoutineId;
+    }
+    return this._activeRoutines[id];
+  };
+
   runRoutine = async (
     name: DiagnosticsRoutineName,
     params?: DiagnosticsParams
   ): Promise<number> => {
     params && console.log('Recieved params', params);
     const dpslRoutineMethod = mapRoutineNameToMethod(name);
-    if (!dpslRoutineMethod) return -1;
-    const routine = dpslRoutineMethod();
+    if (!dpslRoutineMethod) {
+      throw ResponseErrorInfoMessage.InvalidDiagnosticsRoutineName;
+    }
+    const routine = await dpslRoutineMethod();
     this._activeRoutines[routine.id] = routine;
     return routine.id;
   };
   stopRoutine = (id: number): Promise<RoutineStatus> => {
-    const routine = this._activeRoutines[id];
+    const routine = this._fetchRoutineById(id);
     delete this._activeRoutines[id];
     return routine.stop();
   };
   resumeRoutine = (id: number): Promise<RoutineStatus> => {
-    const routine = this._activeRoutines[id];
+    const routine = this._fetchRoutineById(id);
     return routine.resume();
   };
   getRoutineStatus = (id: number): Promise<RoutineStatus> => {
-    const routine = this._activeRoutines[id];
+    const routine = this._fetchRoutineById(id);
     return routine.getStatus();
   };
 }
