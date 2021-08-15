@@ -18,7 +18,7 @@ import refreshIntervals from '../../../core/config/data-refresh-intervals';
   styleUrls: ['../card.css', './backlight.component.css'],
 })
 export class BacklightComponent implements OnInit, OnDestroy {
-  private _refreshIntervalMs: number = refreshIntervals.Cpu;
+  private _refreshIntervalMs: number = refreshIntervals.Backlight;
   private _intervalId!: number;
   private _backlightData!: BacklightInfo;
 

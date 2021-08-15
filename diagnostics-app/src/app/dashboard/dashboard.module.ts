@@ -15,6 +15,7 @@ import { MemoryComponent } from './cards/memory/memory.component';
 import { StorageComponent } from './cards/storage/storage.component';
 import { CpuComponent } from './cards/cpu/cpu.component';
 import { BacklightComponent } from './cards/backlight/backlight.component';
+import { BatteryComponent } from './cards/battery/battery.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BacklightComponent } from './cards/backlight/backlight.component';
     StorageComponent,
     CpuComponent,
     BacklightComponent,
+    BatteryComponent,
   ],
   imports: [CommonModule, SharedModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
