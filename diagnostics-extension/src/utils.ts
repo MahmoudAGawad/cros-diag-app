@@ -6,12 +6,22 @@
  * @fileoverview Defines utility functions
  */
 
-import { Response, TelemetryResponse } from '@common/message';
+import {
+  DiagnosticsResponse,
+  Response,
+  TelemetryResponse,
+} from '@common/message';
 
 export const generateTelemetrySuccessResponse = (
   payload: TelemetryResponse
 ): Response => {
   return { success: true, telemetry: payload };
+};
+
+export const generateDiagnosticsSuccessResponse = (
+  payload: DiagnosticsResponse
+): Response => {
+  return { success: true, diagnostics: payload };
 };
 
 export const generateErrorResponse = (message: string): Response => {

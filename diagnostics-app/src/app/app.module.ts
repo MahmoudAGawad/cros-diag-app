@@ -23,6 +23,7 @@ import { ContentLayoutComponent } from './layout/content-layout/content-layout.c
 import { HeaderComponent } from './layout/header/header.component';
 import { SideNavItemComponent } from './layout/side-nav/side-nav-item/side-nav-item.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
+import { DiagnosticsModule } from './diagnostics/diagnostics.module';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
     CoreModule,
     SharedModule,
     DashboardModule,
+    DiagnosticsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

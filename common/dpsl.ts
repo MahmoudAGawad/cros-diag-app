@@ -246,3 +246,12 @@ export type DpslTypes =
   | BlockDeviceInfo
   | StatefulPartitionInfo
   | TimezoneInfo;
+
+export type DiagnosticsParams =
+  | BatteryChargeRoutineParams
+  | BatteryDischargeRoutineParams
+  | NvmeWearLevelRoutineParams
+  | PowerAcRoutineParams
+  | CpuRoutineDurationParams
+  | CpuPrimeSearchRoutineParams
+  | DiskReadRoutineParams;
