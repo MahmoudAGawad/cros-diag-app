@@ -60,9 +60,10 @@ export class FakeDiagnosticsService implements DiagnosticsService {
     if (!dpslRoutineMethod) {
       throw ResponseErrorInfoMessage.InvalidDiagnosticsRoutineName;
     }
-    const routine = await dpslRoutineMethod();
-    this._activeRoutines[routine.id] = routine;
-    return routine.id;
+    return dpslRoutineMethod().then((routine: Routine) => {
+      this._activeRoutines[routine.id] = routine;
+      return routine.id;
+    });
   };
   stopRoutine = (id: number): Promise<RoutineStatus> => {
     const routine = this._fetchRoutineById(id);
