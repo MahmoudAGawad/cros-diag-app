@@ -8,7 +8,7 @@
 
 export const environment = {
   production: false,
-  extensionId: 'dlpmlekdnheicplagdnogigaglgmkkkl'
+  extensionId: 'gogonhoemckpdpadfnjnpgbjpbjnodgc'
 };
 
 /*

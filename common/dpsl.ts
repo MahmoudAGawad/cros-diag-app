@@ -77,10 +77,10 @@ export interface CpuCStateInfo {
  */
 export interface LogicalCpuInfo {
   maxClockSpeedKhz: number;
-  ScalingMaxFrequencyKhz: number;
-  ScalingCurrentFrequencyKhz: number;
-  IdleTimeMs: number;
-  AcStates: CpuCStateInfo[];
+  scalingMaxFrequencyKhz: number;
+  scalingCurrentFrequencyKhz: number;
+  idleTimeMs: number;
+  acStates: CpuCStateInfo[];
 }
 
 /**
