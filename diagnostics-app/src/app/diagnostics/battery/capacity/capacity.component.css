@@ -42,10 +42,6 @@
   margin-right: 0.5rem;
 }
 
-.app-routine-card .routine-details {
-  margin-top: 2rem;
-}
-
 .app-routine-card .routine-details ul {
   list-style: none;
   padding: 0;
@@ -53,4 +49,11 @@
 
 .app-routine-card .routine-details ul li {
   margin-bottom: 1rem;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 }
