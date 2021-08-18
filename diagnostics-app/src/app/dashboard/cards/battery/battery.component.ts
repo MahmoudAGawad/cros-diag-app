@@ -44,10 +44,13 @@ export class BatteryComponent implements OnInit, OnDestroy {
 
   get batteryChargeRemaining(): number {
     if (this._batteryData.chargeFull === 0) return 0;
-    return (this._batteryData.chargeNow / this._batteryData.chargeFull) * 100;
+    return Math.ceil(
+      (this._batteryData.chargeNow / this._batteryData.chargeFull) * 100
+    );
   }
 
   get batteryTemperature(): BigInt {
+    if (!this._batteryData.temperature) return BigInt(0);
     return BigInt(this._batteryData.temperature);
   }
 
