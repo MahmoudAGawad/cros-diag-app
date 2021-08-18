@@ -1,0 +1,66 @@
+<!--
+ Copyright 2021 The Chromium Authors. All rights reserved.
+ Use of this source code is governed by a BSD-style license that can be
+ found in the LICENSE file.
+-->
+
+<div class="app-routine-card">
+  <div class="header">
+    <header>Battery Health Routine</header>
+    <div class="actions">
+      <ng-template [ngIf]="isRoutineActive">
+        <button
+          class="routine-action-btn"
+          mat-flat-button
+          (click)="refreshRoutineStatus()"
+        >
+          <mat-icon>refresh</mat-icon><span>Refresh</span>
+        </button>
+        <button
+          class="routine-action-btn"
+          mat-flat-button
+          (click)="stopRoutine()"
+        >
+          <mat-icon>stop_circle</mat-icon><span>Reset</span>
+        </button>
+      </ng-template>
+      <ng-template [ngIf]="!isRoutineActive">
+        <button
+          class="routine-action-btn"
+          mat-flat-button
+          (click)="startSequence()"
+        >
+          <mat-icon>play_circle</mat-icon><span>Run</span>
+        </button>
+      </ng-template>
+    </div>
+  </div>
+  <ng-template [ngIf]="mode === 'query'">
+    <mat-progress-bar style="margin-top: 2rem" [mode]="mode"></mat-progress-bar>
+  </ng-template>
+  <ng-template [ngIf]="mode === 'determinate'">
+    <mat-progress-bar
+      style="margin-top: 2rem"
+      [mode]="mode"
+      color="accent"
+      [value]="progressPercentage"
+    ></mat-progress-bar>
+  </ng-template>
+  <ng-template [ngIf]="status.length">
+    <div class="progress-container">
+      <h2>{{ status }}</h2>
+      <h2>Progress: {{ progressPercentage }}%</h2>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="isRoutineActive">
+    <div class="routine-details">
+      <h2>Routine ID: {{ activeRoutine?.routineId }}</h2>
+      <!-- <ul>
+        <li>Progress: {{ activeRoutine?.routineStatus?.progressPercent }}%</li>
+        <li>Output: {{ activeRoutine?.routineStatus?.output }}</li>
+        <li>Status: {{ activeRoutine?.routineStatus?.status }}</li>
+        <li>Message: {{ activeRoutine?.routineStatus?.statusMessage }}</li>
+      </ul> -->
+    </div>
+  </ng-template>
+</div>

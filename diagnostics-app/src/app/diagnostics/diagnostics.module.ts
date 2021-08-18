@@ -12,9 +12,10 @@ import { CommonModule } from '@angular/common';
 import { BatteryComponent } from './battery/battery.component';
 import { CapacityComponent } from './battery/capacity/capacity.component';
 import { SharedModule } from '../shared/shared.module';
+import { HealthComponent } from './battery/health/health.component';
 
 @NgModule({
-  declarations: [BatteryComponent, CapacityComponent],
+  declarations: [BatteryComponent, CapacityComponent, HealthComponent],
   imports: [CommonModule, SharedModule],
 })
 export class DiagnosticsModule {}
