@@ -17,6 +17,7 @@ import { CpuComponent } from './cards/cpu/cpu.component';
 import { BacklightComponent } from './cards/backlight/backlight.component';
 import { BatteryComponent } from './cards/battery/battery.component';
 import { TimezoneComponent } from './cards/timezone/timezone.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TimezoneComponent } from './cards/timezone/timezone.component';
     BacklightComponent,
     BatteryComponent,
     TimezoneComponent,
+    HeaderComponent,
   ],
   imports: [CommonModule, SharedModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
