@@ -11,10 +11,11 @@
         "../common/*"
       ]
     },
+    "moduleResolution": "node",
+    "noImplicitAny": false,
     "allowJs": true,
     "outDir": "build",
     "strict": true,
-    "noImplicitAny": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,

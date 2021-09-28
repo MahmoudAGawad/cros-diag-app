@@ -123,6 +123,13 @@ export interface MemoryInfo {
 }
 
 /**
+ * Response message containing OEM data Info
+ */
+export interface OemData {
+  oemData: string;
+}
+
+/**
  * Response message containing BlockDevice Info
  */
 export interface BlockDeviceInfoObject {

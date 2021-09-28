@@ -36,6 +36,7 @@ export const enum ResponseErrorInfoMessage {
   InvalidDiagnosticsAction = 'The requested diagnostics action is either invalid or missing.',
   InvalidDiagnosticsRoutineName = 'The requested diagnostics routine name is either invalid or missing.',
   InvalidDiagnosticsRoutineId = 'The requested diagnostics routine id is either invalid or missing.',
+  UnsupportedTelemetryFunction = 'Unsupported operation. The requested telemetry function is not supported',
 }
 
 export const enum DiagnosticsRoutineName {

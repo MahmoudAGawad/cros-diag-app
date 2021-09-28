@@ -14,6 +14,7 @@ import {
   CpuInfo,
   FanInfo,
   MemoryInfo,
+  OemData,
   StatefulPartitionInfo,
   TimezoneInfo,
   VpdInfo,
@@ -62,6 +63,10 @@ export const memoryInfo = (): MemoryInfo => ({
   freeMemoryKib: 13067496,
   availableMemoryKib: 14810656,
   pageFaultsSinceLastBoot: '62076622',
+});
+
+export const oemData = (): OemData => ({
+  oemData: 'ABCDEFGHIJKLMN',
 });
 
 export const blockDeviceInfo = (): BlockDeviceInfo => [
@@ -116,7 +121,7 @@ export const cpuInfo = (): CpuInfo => ({
       modelName: 'Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz',
       logicalCpus: [
         {
-          AcStates: [
+          acStates: [
             {
               name: 'C7s',
               timeInStateSinceLastBootUs: 390138,
@@ -154,13 +159,13 @@ export const cpuInfo = (): CpuInfo => ({
               timeInStateSinceLastBootUs: 127594822,
             },
           ],
-          IdleTimeMs: 7963395,
-          ScalingCurrentFrequencyKhz: 3042798,
-          ScalingMaxFrequencyKhz: 4900000,
+          idleTimeMs: 7963395,
+          scalingCurrentFrequencyKhz: 3042798,
+          scalingMaxFrequencyKhz: 4900000,
           maxClockSpeedKhz: 4900000,
         },
         {
-          AcStates: [
+          acStates: [
             {
               name: 'C7s',
               timeInStateSinceLastBootUs: 390138,
@@ -198,13 +203,13 @@ export const cpuInfo = (): CpuInfo => ({
               timeInStateSinceLastBootUs: 127594822,
             },
           ],
-          IdleTimeMs: 7963395,
-          ScalingCurrentFrequencyKhz: 3042798,
-          ScalingMaxFrequencyKhz: 4900000,
+          idleTimeMs: 7963395,
+          scalingCurrentFrequencyKhz: 3042798,
+          scalingMaxFrequencyKhz: 4900000,
           maxClockSpeedKhz: 4900000,
         },
         {
-          AcStates: [
+          acStates: [
             {
               name: 'C7s',
               timeInStateSinceLastBootUs: 390138,
@@ -242,13 +247,13 @@ export const cpuInfo = (): CpuInfo => ({
               timeInStateSinceLastBootUs: 127594822,
             },
           ],
-          IdleTimeMs: 7963395,
-          ScalingCurrentFrequencyKhz: 3042798,
-          ScalingMaxFrequencyKhz: 4900000,
+          idleTimeMs: 7963395,
+          scalingCurrentFrequencyKhz: 3042798,
+          scalingMaxFrequencyKhz: 4900000,
           maxClockSpeedKhz: 4900000,
         },
         {
-          AcStates: [
+          acStates: [
             {
               name: 'C7s',
               timeInStateSinceLastBootUs: 390138,
@@ -286,13 +291,13 @@ export const cpuInfo = (): CpuInfo => ({
               timeInStateSinceLastBootUs: 127594822,
             },
           ],
-          IdleTimeMs: 7963395,
-          ScalingCurrentFrequencyKhz: 3042798,
-          ScalingMaxFrequencyKhz: 4900000,
+          idleTimeMs: 7963395,
+          scalingCurrentFrequencyKhz: 3042798,
+          scalingMaxFrequencyKhz: 4900000,
           maxClockSpeedKhz: 4900000,
         },
         {
-          AcStates: [
+          acStates: [
             {
               name: 'C7s',
               timeInStateSinceLastBootUs: 390138,
@@ -330,13 +335,13 @@ export const cpuInfo = (): CpuInfo => ({
               timeInStateSinceLastBootUs: 127594822,
             },
           ],
-          IdleTimeMs: 7963395,
-          ScalingCurrentFrequencyKhz: 3042798,
-          ScalingMaxFrequencyKhz: 4900000,
+          idleTimeMs: 7963395,
+          scalingCurrentFrequencyKhz: 3042798,
+          scalingMaxFrequencyKhz: 4900000,
           maxClockSpeedKhz: 4900000,
         },
         {
-          AcStates: [
+          acStates: [
             {
               name: 'C7s',
               timeInStateSinceLastBootUs: 390138,
@@ -374,13 +379,13 @@ export const cpuInfo = (): CpuInfo => ({
               timeInStateSinceLastBootUs: 127594822,
             },
           ],
-          IdleTimeMs: 7963395,
-          ScalingCurrentFrequencyKhz: 3042798,
-          ScalingMaxFrequencyKhz: 4900000,
+          idleTimeMs: 7963395,
+          scalingCurrentFrequencyKhz: 3042798,
+          scalingMaxFrequencyKhz: 4900000,
           maxClockSpeedKhz: 4900000,
         },
         {
-          AcStates: [
+          acStates: [
             {
               name: 'C7s',
               timeInStateSinceLastBootUs: 390138,
@@ -418,13 +423,13 @@ export const cpuInfo = (): CpuInfo => ({
               timeInStateSinceLastBootUs: 127594822,
             },
           ],
-          IdleTimeMs: 7963395,
-          ScalingCurrentFrequencyKhz: 3042798,
-          ScalingMaxFrequencyKhz: 4900000,
+          idleTimeMs: 7963395,
+          scalingCurrentFrequencyKhz: 3042798,
+          scalingMaxFrequencyKhz: 4900000,
           maxClockSpeedKhz: 4900000,
         },
         {
-          AcStates: [
+          acStates: [
             {
               name: 'C7s',
               timeInStateSinceLastBootUs: 390138,
@@ -462,9 +467,9 @@ export const cpuInfo = (): CpuInfo => ({
               timeInStateSinceLastBootUs: 127594822,
             },
           ],
-          IdleTimeMs: 7963395,
-          ScalingCurrentFrequencyKhz: 3042798,
-          ScalingMaxFrequencyKhz: 4900000,
+          idleTimeMs: 7963395,
+          scalingCurrentFrequencyKhz: 3042798,
+          scalingMaxFrequencyKhz: 4900000,
           maxClockSpeedKhz: 4900000,
         },
       ],

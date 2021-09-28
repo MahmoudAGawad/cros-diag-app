@@ -19,6 +19,6 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
   },
   resolve: {
-    extensions: [".ts"],
+    extensions: [".js", ".ts"],
   },
 };
