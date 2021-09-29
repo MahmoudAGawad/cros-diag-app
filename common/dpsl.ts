@@ -77,10 +77,10 @@ export interface CpuCStateInfo {
  */
 export interface LogicalCpuInfo {
   maxClockSpeedKhz: number;
-  ScalingMaxFrequencyKhz: number;
-  ScalingCurrentFrequencyKhz: number;
-  IdleTimeMs: number;
-  AcStates: CpuCStateInfo[];
+  scalingMaxFrequencyKhz: number;
+  scalingCurrentFrequencyKhz: number;
+  idleTimeMs: number;
+  acStates: CpuCStateInfo[];
 }
 
 /**
@@ -120,6 +120,13 @@ export interface MemoryInfo {
   freeMemoryKib: number;
   availableMemoryKib: number;
   pageFaultsSinceLastBoot: string;
+}
+
+/**
+ * Response message containing OEM data Info
+ */
+export interface OemData {
+  oemData: string;
 }
 
 /**

@@ -6,6 +6,8 @@
  * @fileoverview Classes related to telemetry
  */
 
+import { dpsl } from 'cros-dpsl-js';
+
 import {
   BacklightInfo,
   BatteryInfo,
@@ -14,27 +16,66 @@ import {
   CpuInfo,
   FanInfo,
   MemoryInfo,
+  OemData,
   StatefulPartitionInfo,
   TimezoneInfo,
   VpdInfo,
 } from '@common/dpsl';
 import * as fakeData from './fake_telemetry.data';
+import { environment } from '../environments/environment';
+import { ResponseErrorInfoMessage } from '@common/message';
 
 /**
  * Abstract class reprensenting the interface of
  * service to fetch system telemetry data
  */
 export abstract class TelemetryService {
-  abstract getBacklightInfo(): Promise<BacklightInfo>;
-  abstract getBatteryInfo(): Promise<BatteryInfo>;
-  abstract getBluetoothInfo(): Promise<BluetoothInfo>;
-  abstract getCachedVpdInfo(): Promise<VpdInfo>;
-  abstract getCpuInfo(): Promise<CpuInfo>;
-  abstract getFanInfo(): Promise<FanInfo>;
-  abstract getMemoryInfo(): Promise<MemoryInfo>;
-  abstract getNonRemovableBlockDevicesInfo(): Promise<BlockDeviceInfo>;
-  abstract getStatefulPartitionInfo(): Promise<StatefulPartitionInfo>;
-  abstract getTimezoneInfo(): Promise<TimezoneInfo>;
+  getBacklightInfo(): Promise<BacklightInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getBatteryInfo(): Promise<BatteryInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getBluetoothInfo(): Promise<BluetoothInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getCachedVpdInfo(): Promise<VpdInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getCpuInfo(): Promise<CpuInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getFanInfo(): Promise<FanInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getMemoryInfo(): Promise<MemoryInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getNonRemovableBlockDevicesInfo(): Promise<BlockDeviceInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getOemData(): Promise<OemData> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getStatefulPartitionInfo(): Promise<StatefulPartitionInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+  getTimezoneInfo(): Promise<TimezoneInfo> {
+    return Promise.reject(ResponseErrorInfoMessage.UnsupportedTelemetryFunction);
+  }
+}
+
+/**
+ * Implementation of TelemetryService.
+ * @extends TelemetryService
+ */
+export class TelemetryServiceImpl extends TelemetryService {
+  async getCachedVpdInfo(): Promise<VpdInfo> {
+    return dpsl.telemetry.getVpdInfo();
+  }
+  async getOemData(): Promise<OemData> {
+    return dpsl.telemetry.getOemData();
+  }
 }
 
 /**
@@ -66,6 +107,9 @@ export class FakeTelemetryService extends TelemetryService {
   async getNonRemovableBlockDevicesInfo(): Promise<BlockDeviceInfo> {
     return fakeData.blockDeviceInfo();
   }
+  async getOemData(): Promise<OemData> {
+    return fakeData.oemData();
+  }
   async getStatefulPartitionInfo(): Promise<StatefulPartitionInfo> {
     return fakeData.statefulPartitionInfo();
   }
@@ -87,7 +131,11 @@ export class TelemetryServiceProvider {
 
   public static getTelemetryService(): TelemetryService {
     if (!TelemetryServiceProvider.instance) {
-      TelemetryServiceProvider.instance = new FakeTelemetryService();
+      if (environment.testModeEnabled) {
+        TelemetryServiceProvider.instance = new FakeTelemetryService();
+      } else {
+        TelemetryServiceProvider.instance = new TelemetryServiceImpl();
+      }
     }
     return TelemetryServiceProvider.instance;
   }

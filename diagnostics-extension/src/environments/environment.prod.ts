@@ -3,6 +3,5 @@
 // found in the LICENSE file.
 
 export const environment = {
-  production: true,
-  extensionId: 'gogonhoemckpdpadfnjnpgbjpbjnodgc'
+  testModeEnabled: false
 };

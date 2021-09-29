@@ -43,9 +43,9 @@ export class CpuComponent implements OnInit, OnDestroy {
   }
 
   getLCpuUsagePercentage(lCpu: LogicalCpuInfo): number {
-    if (lCpu.ScalingMaxFrequencyKhz === 0) return 0;
+    if (!lCpu.scalingMaxFrequencyKhz || lCpu.scalingMaxFrequencyKhz === 0) return 0;
     return (
-      (lCpu.ScalingCurrentFrequencyKhz / lCpu.ScalingMaxFrequencyKhz) * 100
+      (lCpu.scalingCurrentFrequencyKhz / lCpu.scalingMaxFrequencyKhz) * 100
     );
   }
 

@@ -17,10 +17,6 @@ import {
 } from '@common/message';
 import { DpslTypes } from '@common/dpsl';
 import { handleTelemetry } from '../../controllers/telemetry';
-import {
-  generateErrorResponse,
-  generateTelemetrySuccessResponse,
-} from '../../utils';
 import * as fakeData from '../../services/fake_telemetry.data';
 
 describe('should return correct error messages', () => {
