@@ -30,7 +30,7 @@
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
-    "cros-dpsl-js": "file:../../telemetry-support-extension-for-chromeos/cros-dpsl-js-1.0.1.tgz",
+    "cros-dpsl-js": "^1.0.1",
     "eslint": "^7.29.0",
     "jest": "^27.0.6",
     "ts-jest": "^27.0.3",
