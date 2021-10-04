@@ -6,19 +6,50 @@
  * @fileoverview Classes related to telemetry
  */
 
+import { dpsl as dpslImpl, Routine as DPSLRoutine } from 'cros-dpsl-js';
+
 import { DiagnosticsParams, RoutineStatus } from '@common/dpsl';
 import {
   DiagnosticsRoutineName,
   ResponseErrorInfoMessage,
 } from '@common/message';
-import { dpsl } from './fake_dpsl';
-import { Routine } from './fake_routine';
+import { dpsl as fakeDpsl } from './fake_dpsl';
+import { Routine as FakeRoutine } from './fake_routine';
+import { environment } from '../environments/environment';
+
+type Routine = DPSLRoutine | FakeRoutine;
+
+let dpsl = dpslImpl;
+if (environment.testModeEnabled) {
+  dpsl = fakeDpsl;
+}
+
+export function mapRoutineNameToMethod(name: DiagnosticsRoutineName): (params?: DiagnosticsParams) => Promise<Routine> {
+  switch (name) {
+    case DiagnosticsRoutineName.RUN_BATTERY_CAPACITY_ROUTINE:
+      return dpsl.diagnostics.battery.runCapacityRoutine;
+    case DiagnosticsRoutineName.RUN_BATTERY_CHARGE_ROUTINE:
+      return dpsl.diagnostics.battery.runChargeRoutine;
+    case DiagnosticsRoutineName.RUN_BATTERY_DISCHARGE_ROUTINE:
+      return dpsl.diagnostics.battery.runDischargeRoutine;
+    case DiagnosticsRoutineName.RUN_BATTERY_HEALTH_ROUTINE:
+      return dpsl.diagnostics.battery.runHealthRoutine;
+    case DiagnosticsRoutineName.RUN_CPU_CACHE_ROUTINE:
+      return dpsl.diagnostics.cpu.runCacheRoutine;
+    case DiagnosticsRoutineName.RUN_CPU_STRESS_ROUTINE:
+      return dpsl.diagnostics.cpu.runStressRoutine;
+    case DiagnosticsRoutineName.RUN_MEMORY_ROUTINE:
+      return dpsl.diagnostics.memory.runMemoryRoutine;
+  }
+  throw new Error(ResponseErrorInfoMessage.InvalidDiagnosticsRoutineName);
+}
 
 /**
  * Abstract class reprensenting the interface of
  * service to run diagnostic routines
  */
 export abstract class DiagnosticsService {
+  abstract getAvailableRoutines(): Promise<Array<string>>;
   abstract runRoutine(
     name: DiagnosticsRoutineName,
     params?: DiagnosticsParams
@@ -28,53 +59,44 @@ export abstract class DiagnosticsService {
   abstract getRoutineStatus(id: number): Promise<RoutineStatus>;
 }
 
-const mapRoutineNameToMethod = (name: DiagnosticsRoutineName) => {
-  switch (name) {
-    case DiagnosticsRoutineName.RUN_BATTERY_CAPACITY_ROUTINE:
-      return dpsl.diagnostics.battery.runCapacityRoutine;
-    default:
-      return null;
-  }
-};
-
 /**
- * Fake implementation of DiagnosticsService
+ * Implementation of DiagnosticsService
  * @extends DiagnosticsService
  */
-export class FakeDiagnosticsService implements DiagnosticsService {
+export class DiagnosticsServiceImpl implements DiagnosticsService {
   private _activeRoutines: { [key: number]: Routine } = {};
 
   private _fetchRoutineById = (id: number) => {
     if (!(id in this._activeRoutines)) {
-      throw ResponseErrorInfoMessage.InvalidDiagnosticsRoutineId;
+      throw new Error(ResponseErrorInfoMessage.InvalidDiagnosticsRoutineId);
     }
     return this._activeRoutines[id];
   };
 
+  getAvailableRoutines = async (): Promise<Array<string>> => {
+    return dpsl.diagnostics.getAvailableRoutines();
+  }
   runRoutine = async (
     name: DiagnosticsRoutineName,
     params?: DiagnosticsParams
   ): Promise<number> => {
     params && console.log('Recieved params', params);
     const dpslRoutineMethod = mapRoutineNameToMethod(name);
-    if (!dpslRoutineMethod) {
-      throw ResponseErrorInfoMessage.InvalidDiagnosticsRoutineName;
-    }
-    return dpslRoutineMethod().then((routine: Routine) => {
+    return dpslRoutineMethod(params).then((routine: Routine) => {
       this._activeRoutines[routine.id] = routine;
       return routine.id;
     });
   };
-  stopRoutine = (id: number): Promise<RoutineStatus> => {
+  stopRoutine = async (id: number): Promise<RoutineStatus> => {
     const routine = this._fetchRoutineById(id);
     delete this._activeRoutines[id];
     return routine.stop();
   };
-  resumeRoutine = (id: number): Promise<RoutineStatus> => {
+  resumeRoutine = async (id: number): Promise<RoutineStatus> => {
     const routine = this._fetchRoutineById(id);
     return routine.resume();
   };
-  getRoutineStatus = (id: number): Promise<RoutineStatus> => {
+  getRoutineStatus = async (id: number): Promise<RoutineStatus> => {
     const routine = this._fetchRoutineById(id);
     return routine.getStatus();
   };
@@ -88,7 +110,7 @@ export class DiagnosticsServiceProvider {
 
   public static getDiagnosticsService(): DiagnosticsService {
     if (!this.instance) {
-      this.instance = new FakeDiagnosticsService();
+      this.instance = new DiagnosticsServiceImpl();
     }
     return this.instance;
   }

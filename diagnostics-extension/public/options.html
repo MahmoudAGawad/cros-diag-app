@@ -1,0 +1,16 @@
+<!--
+ Copyright 2021 The Chromium Authors. All rights reserved.
+ Use of this source code is governed by a BSD-style license that can be
+ found in the LICENSE file.
+-->
+
+<html>
+<button onclick="onClick()">Request serial number permission</button>
+<script>
+  async function onClick() {
+    chrome.permissions.request({
+      'permissions': ['os.telemetry.serial_number'],
+    });
+  }
+</script>
+</html>

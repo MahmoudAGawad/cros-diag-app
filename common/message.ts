@@ -41,6 +41,12 @@ export const enum ResponseErrorInfoMessage {
 
 export const enum DiagnosticsRoutineName {
   RUN_BATTERY_CAPACITY_ROUTINE = 'runBatteryCapacityRoutine',
+  RUN_BATTERY_CHARGE_ROUTINE = 'runBatteryChargeRoutine',
+  RUN_BATTERY_DISCHARGE_ROUTINE = 'runBatteryDischargeRoutine',
+  RUN_BATTERY_HEALTH_ROUTINE = 'runBatteryHealthRoutine',
+  RUN_CPU_CACHE_ROUTINE = 'runCpuCacheRoutine',
+  RUN_CPU_STRESS_ROUTINE = 'runCpuStressRoutine',
+  RUN_MEMORY_ROUTINE = 'runMemoryRoutine',
 }
 
 export const enum DiagnosticsAction {

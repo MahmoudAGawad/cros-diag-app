@@ -9,16 +9,37 @@
 
 import { Routine } from './fake_routine';
 
-const generateRandomId = () => {
-  return Math.floor(Math.random() * 10000);
-};
-
 export const dpsl = {
   diagnostics: {
+    getAvailableRoutines: async (): Promise<Array<string>> => {
+      return ["battery-capacity", "battery-charge", "battery-discharge",
+        "battery-health", "cpu-cache", "cpu-stress", "memory"];
+    },
     battery: {
       runCapacityRoutine: async (): Promise<Routine> => {
-        const routineId = generateRandomId();
-        return new Routine(routineId);
+        return new Routine(123456);
+      },
+      runChargeRoutine: async (): Promise<Routine> => {
+        return new Routine(123456);
+      },
+      runDischargeRoutine: async (): Promise<Routine> => {
+        return new Routine(123456);
+      },
+      runHealthRoutine: async (): Promise<Routine> => {
+        return new Routine(123456);
+      },
+    },
+    cpu: {
+      runCacheRoutine: async (): Promise<Routine> => {
+        return new Routine(123456);
+      },
+      runStressRoutine: async (): Promise<Routine> => {
+        return new Routine(123456);
+      },
+    },
+    memory: {
+      runMemoryRoutine: async (): Promise<Routine> => {
+        return new Routine(123456);
       },
     },
   },
