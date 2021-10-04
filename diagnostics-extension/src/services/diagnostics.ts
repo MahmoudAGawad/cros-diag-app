@@ -24,7 +24,7 @@ if (environment.testModeEnabled) {
   dpsl = fakeDpsl;
 }
 
-export function mapRoutineNameToMethod(name: DiagnosticsRoutineName): () => Promise<Routine> {
+export function mapRoutineNameToMethod(name: DiagnosticsRoutineName): (params?: DiagnosticsParams) => Promise<Routine> {
   switch (name) {
     case DiagnosticsRoutineName.RUN_BATTERY_CAPACITY_ROUTINE:
       return dpsl.diagnostics.battery.runCapacityRoutine;
@@ -82,7 +82,7 @@ export class DiagnosticsServiceImpl implements DiagnosticsService {
   ): Promise<number> => {
     params && console.log('Recieved params', params);
     const dpslRoutineMethod = mapRoutineNameToMethod(name);
-    return dpslRoutineMethod().then((routine: Routine) => {
+    return dpslRoutineMethod(params).then((routine: Routine) => {
       this._activeRoutines[routine.id] = routine;
       return routine.id;
     });
