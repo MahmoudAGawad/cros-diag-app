@@ -14,6 +14,10 @@ import { SharedModule } from '../shared/shared.module';
 import { MemoryComponent } from './cards/memory/memory.component';
 import { StorageComponent } from './cards/storage/storage.component';
 import { CpuComponent } from './cards/cpu/cpu.component';
+import { BacklightComponent } from './cards/backlight/backlight.component';
+import { BatteryComponent } from './cards/battery/battery.component';
+import { TimezoneComponent } from './cards/timezone/timezone.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { CpuComponent } from './cards/cpu/cpu.component';
     MemoryComponent,
     StorageComponent,
     CpuComponent,
+    BacklightComponent,
+    BatteryComponent,
+    TimezoneComponent,
+    HeaderComponent,
   ],
   imports: [CommonModule, SharedModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -4,14 +4,21 @@
  found in the LICENSE file.
 -->
 
+<div>
+  <app-dashboard-header></app-dashboard-header>
+</div>
+
 <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px">
   <div class="col-container" fxFlex fxLayout="column" fxLayoutGap="16px">
     <div class="card-container"><app-memory-card></app-memory-card></div>
+    <div class="card-container"><app-backlight-card></app-backlight-card></div>
   </div>
   <div class="col-container" fxFlex fxLayout="column" fxLayoutGap="16px">
     <div class="card-container"><app-cpu-card></app-cpu-card></div>
+    <div class="card-container"><app-timezone-card></app-timezone-card></div>
   </div>
   <div class="col-container" fxFlex fxLayout="column" fxLayoutGap="16px">
     <div class="card-container"><app-storage-card></app-storage-card></div>
+    <div class="card-container"><app-battery-card></app-battery-card></div>
   </div>
 </div>

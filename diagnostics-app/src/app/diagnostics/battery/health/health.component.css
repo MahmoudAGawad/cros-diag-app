@@ -11,6 +11,7 @@
   border: 1px solid var(--app-dashboard-card-border-color);
   font-size: 18px;
   transition: all 200ms ease-in-out;
+  margin-top: 1rem;
 }
 
 .app-routine-card .header {

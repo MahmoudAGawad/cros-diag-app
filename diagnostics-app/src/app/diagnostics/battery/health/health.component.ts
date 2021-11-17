@@ -12,11 +12,11 @@ import { DiagnosticsResponse, DiagnosticsRoutineName } from '@common/message';
 import { DiagnosticsService } from 'src/app/core/services/diagnostics.service';
 
 @Component({
-  selector: 'app-diagostics-battery-capacity',
-  templateUrl: './capacity.component.html',
-  styleUrls: ['./capacity.component.css'],
+  selector: 'app-diagostics-battery-health',
+  templateUrl: './health.component.html',
+  styleUrls: ['./health.component.css'],
 })
-export class CapacityComponent implements OnInit {
+export class HealthComponent implements OnInit {
   private _activeRoutine: DiagnosticsResponse | null = null;
   private _routineName = DiagnosticsRoutineName.RUN_BATTERY_CAPACITY_ROUTINE;
 
@@ -41,7 +41,7 @@ export class CapacityComponent implements OnInit {
     this.status = 'Running routine';
     this.mode = 'determinate';
 
-    const animationSpeed = 20;
+    const animationSpeed = 30;
 
     let animate = window.setInterval(() => {
       this.progressPercentage++;

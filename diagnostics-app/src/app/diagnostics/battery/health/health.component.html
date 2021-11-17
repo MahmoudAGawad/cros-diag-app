@@ -6,7 +6,7 @@
 
 <div class="app-routine-card">
   <div class="header">
-    <header>Battery Capacity Routine</header>
+    <header>Battery Health Routine</header>
     <div class="actions">
       <ng-template [ngIf]="isRoutineActive">
         <button
@@ -55,10 +55,12 @@
   <ng-template [ngIf]="isRoutineActive">
     <div class="routine-details">
       <h2>Routine ID: {{ activeRoutine?.routineId }}</h2>
-      <ul>
+      <!-- <ul>
+        <li>Progress: {{ activeRoutine?.routineStatus?.progressPercent }}%</li>
+        <li>Output: {{ activeRoutine?.routineStatus?.output }}</li>
         <li>Status: {{ activeRoutine?.routineStatus?.status }}</li>
         <li>Message: {{ activeRoutine?.routineStatus?.statusMessage }}</li>
-      </ul>
+      </ul> -->
     </div>
   </ng-template>
 </div>
