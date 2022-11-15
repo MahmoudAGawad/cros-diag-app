@@ -1,3 +1,6 @@
+#Note
+This project is now maintained in [GoogleChromeLabs/cros-sample-telemetry-extension](https://github.com/GoogleChromeLabs/cros-sample-telemetry-extension). This repo is no longer active.
+
 # cros-diag-app
 Third party Diagnostics App for ChromeOS
 
