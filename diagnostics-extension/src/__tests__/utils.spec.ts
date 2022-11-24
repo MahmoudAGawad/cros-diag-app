@@ -9,8 +9,9 @@
 import {
   generateErrorResponse,
   generateTelemetrySuccessResponse,
+  generateDiagnosticsSuccessResponse,
 } from '../utils';
-import { Response, TelemetryResponse } from '@common/message';
+import { Response, TelemetryResponse, DiagnosticsResponse } from '@common/message';
 import { backlightInfo } from '../services/fake_telemetry.data';
 
 describe('should generate correct response objects', () => {
@@ -31,6 +32,24 @@ describe('should generate correct response objects', () => {
     expect(response).toEqual({
       success: true,
       telemetry: payload,
+    });
+  });
+
+  it('should generate correct diagnostics response object', () => {
+    const payload: DiagnosticsResponse = {
+      routineId: 123456,
+      routineStatus: {
+        progressPercent: 50,
+        output: 'output',
+        status: `ran command get-status`,
+        statusMessage: 'status message',
+        userMessage: 'user message',
+      }
+    };
+    const response: Response = generateDiagnosticsSuccessResponse(payload);
+    expect(response).toEqual({
+      success: true,
+      diagnostics: payload,
     });
   });
 });
